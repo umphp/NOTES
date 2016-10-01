@@ -1,0 +1,28 @@
+- 数组浅拷贝(限制:数组项不能是存在外部引用的引用类型)
+        
+    ```
+    // 1.利用数组的 concat 方法
+    // concat方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本
+    var array=[1,2,3];
+    var copyArray=array.concat();
+    
+    // 2.利用数组的 slice 方法
+    // slice方法并不会修改数组，而是返回一个子数
+    var array=[1,2,3];
+    var copyArray=array.slice(); //或slice(0)
+    ```
+- 对象（Array和Object）深拷贝
+    
+    ```
+    // 1.利用 JSON 对象的相关方法：IE8+
+    var obj={age:10};
+    var array=[1,2,obj];
+    var deepArray=JSON.parse( JSON.stringify(array) );
+    
+    // 2.手动深层复制 (参考'js代码片段：extend方法')
+    
+    ```
+    
+参考：  
+www.cnblogs.com/vajoy/p/5510743.html
+
