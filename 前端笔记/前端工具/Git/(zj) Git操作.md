@@ -45,10 +45,13 @@
     \- 用HEAD表示当前版本，HEAD\^表示上一个版本，HEAD^^表示上上一个版本，往上100个版本用HEAD~100表示  
     \- git reset --hard commit_id  
     \- 回到commit_id代表的某个版本  
-    \- 以上操作会删除git log记录
+    \- 以上操作会删除git log记录  
+    \- git reset --hard HASH 返回到某个节点，不保留修改。  
+    \- git reset --soft HASH 返回到某个节点。保留修改。
 - #### 撤销修改
     - ##### 修改后 未add（添加到暂存区） 需要撤销修改时：  
         \- git checkout -- example.txt 或 手动删除工作区修改  
+        \- git checkout .   (撤销所有修改)
         \- 工作区 ： clean  暂存区： clean
     - ##### 修改后 add了（未commit） 再次修改文件  要撤销第二次修改时：  
         \- git checkout -- example.txt (销毁工作区修改)  
