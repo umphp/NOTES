@@ -1,11 +1,11 @@
-- ### 参数
-    - ####  fn.call ( thisObj,agr1,agr2...)
-    - ####  fn.apply ( thisObj, array )
+### 参数
+    ####  fn.call ( thisObj,agr1,agr2...)
+    ####  fn.apply ( thisObj, array )
         \- IE9+  
         \- 第二个参数可以为类数组（ES5新增：IE10+）
-    - ####  fn.bind ( thisObj,agr1,agr2...)
+    ####  fn.bind ( thisObj,agr1,agr2...)
         \- 返回this值绑定为thisObj的新函数，无论该新函数怎么被调用，this始终绑定为thisObj
-- ### Polyfill
+### Polyfill
 
 ```
 if (!Function.prototype.bind) {
@@ -34,17 +34,17 @@ if (!Function.prototype.bind) {
 }
 ```
 
-- ### 相同点
-    - #### 如果第一个参数为null或者undefined的话，在非严格模式下，实际上绑定到的是全局对象，这一点对三者都适用。在严格模式下，this值不做转换，即为null或undefined
-- ### 一些用法
-    - ##### 将类数组转换为数组  
+### 相同点
+    #### 如果第一个参数为null或者undefined的话，在非严格模式下，实际上绑定到的是全局对象，这一点对三者都适用。在严格模式下，this值不做转换，即为null或undefined
+### 一些用法
+    ##### 将类数组转换为数组  
         \- Array.prototype.slice.call(arguments);  
         \- var unboundSlice = Array.prototype.slice;  
          var slice = Function.prototype.call.bind(unboundSlice);  
           slice(arguments); 
-    - ##### 获取数组中最大的数值  
+    ##### 获取数组中最大的数值  
         \- Math.max.apply(Math, [1, 2, 3, 5, 7]); 
-    - ##### 利用bind实现柯里化
+    ##### 利用bind实现柯里化
                 
         ```
         function fn1(a,b){

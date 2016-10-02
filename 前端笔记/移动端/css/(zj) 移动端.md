@@ -1,13 +1,13 @@
-- ###  viewport
-    - #### 两个概念
-        - ##### layout viewport
+###  viewport
+    #### 两个概念
+        ##### layout viewport
             \- 一般默认980px (ios)  
             \- 通过document.body.clientWidth获取
-        - ##### visual viewport
+        ##### visual viewport
             \- 一般屏幕宽度/dpr  
             \- 通过window.innerWidth获取  
             \- 页面缩放比可通过window.innerWidth / document.body.clientWidth获取
-    - #### meta标签
+    #### meta标签
         
         ```
         //格式

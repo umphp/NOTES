@@ -1,33 +1,33 @@
-- # DOM属性
-    - ### innerHTML
+# DOM属性
+    ### innerHTML
         \- 节点（元素）的文本值
-    - ### innerText
-    - ### parentNode 
+    ### innerText
+    ### parentNode 
         \- 节点（元素）的父节点
-    - ### childNodes 
+    ### childNodes 
         \- 节点（元素）的子节点
-    - ### attributes 
+    ### attributes 
         \- 节点（元素）的属性节点
-- # 操作DOM方法
-    - ## 创建元素或节点
-        - ### createElement()
+# 操作DOM方法
+    ## 创建元素或节点
+        ### createElement()
             \- 创建元素节点
-        - ### createTextNode()
+        ### createTextNode()
             \- 创建文本节点
-        - ### createAttribute()
+        ### createAttribute()
             \- 创建属性节点
-    - ## 插入/删除/替换元素或节点
-        - ### appendChild()
+    ## 插入/删除/替换元素或节点
+        ### appendChild()
             \- 把新的子节点添加到指定节点
-        - ### insertBefore()
+        ### insertBefore()
             \- 在指定的子节点前面插入新的子节点
-        - ### removeChild()
+        ### removeChild()
             \- 删除子节点
-        - ### replaceChild()
+        ### replaceChild()
             \- 替换子节点
-    - ## 属性操作
-        - ### getAttribute()
+    ## 属性操作
+        ### getAttribute()
             \- 返回指定的属性值
-        - ### setAttribute()
+        ### setAttribute()
             \- 把指定属性设置或修改为指定的值
         

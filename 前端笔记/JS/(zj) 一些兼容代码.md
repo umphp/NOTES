@@ -1,4 +1,4 @@
-- ### 获取浏览器窗口高宽：
+### 获取浏览器窗口高宽：
 
 ```
 var winW=document.documentElement.clientWidth || document.body.clientWidth; 
@@ -6,7 +6,7 @@ var winH=document.documentElement.clientHeight || document.body.clientHeight;
 ```
 
 
-- ### 获取event对象、获取事件目标、取消冒泡、阻止事件的默认行为( 后者为IE属性或方法 )
+### 获取event对象、获取事件目标、取消冒泡、阻止事件的默认行为( 后者为IE属性或方法 )
 
 ```
 domObj.onclick=function(e){
@@ -18,7 +18,7 @@ domObj.onclick=function(e){
 ```
 
 
-- ### 获取元素样式 (只读)：
+### 获取元素样式 (只读)：
 
 
 ```
@@ -53,7 +53,7 @@ HTMLElement.prototype.getStyle=function(attr){
 ```
 
 
-- ### 绑定/解除事件处理函数： IE8及以下只支持事件冒泡
+### 绑定/解除事件处理函数： IE8及以下只支持事件冒泡
 ```
  /*注：addEventListener绑定的事件函数只能用removeEventListener解除，
  attachEvent同，且传递的参数要相同，所以不能用匿名函数指定事件处理函数,

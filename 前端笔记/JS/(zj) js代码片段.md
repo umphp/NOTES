@@ -1,4 +1,4 @@
-- #### 数组去重
+#### 数组去重
 
 ```
 function uniq(arr,returnNew){
@@ -19,8 +19,8 @@ var arr=[0,2,1,'2',7,1,0];
 console.log( uniq(arr) ); // [0,2,1,'2',7]
 
 ```
-- #### 数组随机排序
-    - ##### 不完全随机(限数值类型)
+#### 数组随机排序
+    ##### 不完全随机(限数值类型)
         
     ```
     function random_arr(arr，returnNew){
@@ -34,7 +34,7 @@ console.log( uniq(arr) ); // [0,2,1,'2',7]
     }
     ```
    
-    - ##### 完全随机(不限值类型)
+    ##### 完全随机(不限值类型)
 
     ```
     function randomArr(arr,returnNew){
@@ -52,14 +52,14 @@ console.log( uniq(arr) ); // [0,2,1,'2',7]
 	    }
     }
     ```
-- #### 创建值均为"a"，长度为1000的数组(限字符串)
+#### 创建值均为"a"，长度为1000的数组(限字符串)
     
 ```
 function newArr(str,length){
     return new Array(length+1).join(str).split("");
 }
 ```
-- #### 输出字符串中重复次数最多的字符及其次数
+#### 输出字符串中重复次数最多的字符及其次数
 
 ```
 function maxOfStr(str){
@@ -84,7 +84,7 @@ var str="11333331hhdsafdsiiisd";
 maxOfStr(str);  // { max_char:"3",max_times:5 }
 
 ```
-- #### 获取元素相对文档左上角的距离
+#### 获取元素相对文档左上角的距离
  
 ```
 function getPos(ele){
@@ -102,7 +102,7 @@ function getPos(ele){
 }
 ```
 
-- #### 将时间转化为14位数值字符串
+#### 将时间转化为14位数值字符串
 
 ```
 function timeToDigit(dateStr){
@@ -114,7 +114,7 @@ function timeToDigit(dateStr){
   return dateStr;
 }
 ```
-- #### 将14位数值字符串转为对象
+#### 将14位数值字符串转为对象
 
 ```
 /***将14位数值字符串转为对象: timeObj--时间对象 ,timeStr--指定格式时间字符串
@@ -160,7 +160,7 @@ function timeFormat(opts){
 
 }
 ```
-- #### 数据类型判断
+#### 数据类型判断
 
 ```
 function zj_typeof(data){
@@ -174,7 +174,7 @@ function zj_typeof(data){
 ```
 
 
-- #### 类似jquery的jQuery.extend()的方法
+#### 类似jquery的jQuery.extend()的方法
 
 ```
 /*** obj扩展方法(类似jQuery.extend)，返回被扩展的对象扩展之后的状态,考虑数组和对象这两种情况
@@ -257,7 +257,7 @@ function extend(){
 }
 
 ``` 
-- #### 对象深层复制
+#### 对象深层复制
 
 ```
 // 1.使用上面封装的 extend(true,{},obj)

@@ -1,33 +1,33 @@
-- #### Cookie
+#### Cookie
   - 数据存储到计算机中，通过浏览器控制添加与删除数据
-- #### Cookie的特点
+#### Cookie的特点
     - 存储限制  
     - 域名100个cookie,每组值大小4KB  
     - 客户端、服务器端，都会请求服务器（头信息）  
     - 页面间的cookie是共享  
 
-- #### Storage
-  - #####  sessionStorage
+#### Storage
+  #####  sessionStorage
     session临时回话，从页面打开到页面关闭的时间段
   窗口的临时存储，页面关闭，本地存储消失
-  - ##### localStorage
+  ##### localStorage
     永久存储（可以手动删除数据）
-- #### Storage的特点
+#### Storage的特点
     - 存储量限制 ( 5M )
     - 客户端完成，不会请求服务器处理
     - sessionStorage数据是不共享、 localStorage共享
-- #### Storage API
-    - ##### setItem():
+#### Storage API
+    ##### setItem():
         设置数据，key\value类型，类型都是字符串
         可以用获取属性的形式操作
-    - ##### getItem():
+    ##### getItem():
         获取数据，通过key来获取到相应的value
-    - ##### removeItem():
+    ##### removeItem():
         删除数据，通过key来删除相应的value
-    - ##### clear():
+    ##### clear():
         删除全部存储的值
-- #### Storage API 2
-    - ##### 存储事件:
+#### Storage API 2
+    ##### 存储事件:
         \-当数据有修改或删除的情况下，就会触发**storage**事件  
 
         \-在对数据进行改变的窗口对象上是不会触发的

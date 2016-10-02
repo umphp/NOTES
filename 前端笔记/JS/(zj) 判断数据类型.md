@@ -1,4 +1,4 @@
-- #### typeof 
+#### typeof 
     \- 检查基本类型(除null)和函数  
 
 ```
@@ -14,7 +14,7 @@ typeof new Object() // "object"
 typeof [1,2] // "object"
 
 ```
-- #### instanceof
+#### instanceof
     \- 判断对象类型  
     \- *object* instanceof *constructor*  
     \- 检测 constructor.prototype 是否存在于参数 object 的原型链上  
@@ -25,7 +25,7 @@ typeof [1,2] // "object"
 [1,2] instanceof Object === true //true
 {} instanceof Object === true //true
 ```
-- #### Object.prototype.toString.call( obj );
+#### Object.prototype.toString.call( obj );
     \- 任意类型都可判断  
     \- Object.prototype.toString.call( obj ).slice(8,-1).toLowerCase();
 

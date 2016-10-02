@@ -1,4 +1,4 @@
-- #### Deferred对象
+#### Deferred对象
 ```
     var dfd=$.Deferred();
     setTimeout(function(){
