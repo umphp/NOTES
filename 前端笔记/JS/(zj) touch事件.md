@@ -1,22 +1,22 @@
-### 事件：
-    #### touchstart:  
+- ### 事件：
+    - #### touchstart:  
         \- 手指放到屏幕上的时候触发  （如果已经有手指放在屏幕上则不触发）
-    #### touchmove:   
+    - #### touchmove:   
         \- 手指在屏幕上移动的时候触发
-    #### touchend:   
+    - #### touchend:   
         \- 手指从屏幕上拿起的时候触发
-    #### touchcancel:
+    - #### touchcancel:
         \- 系统取消touch事件的时候触发。至于系统什么时候会取消，不详。。
 
-### 事件属性： 
-    #### event.touches
+- ### 事件属性： 
+    - #### event.touches
         \- 跟踪触摸操作的touch对象数组（当前屏幕上所有触摸点的列表）
-    #### event.targetTouches 
+    - #### event.targetTouches 
         \- 特定事件目标的touch对象数组（当前对象上所有触摸点的列表）
-    #### event.changeTouches  
+    - #### event.changeTouches  
         \- 上次触摸改变的touch对象数组  
         ==注：jquery绑定touch事件时要使用原生事件对象event.originalEvent==
-### event.touches对象属性：
+- ### event.touches对象属性：
     - **clientX**：触摸目标在视口中的x坐标
     - **clientY**：触摸目标在视口中的Y坐标
     - **pageX**：触摸目标在页面中的x坐标（包括滚动）
@@ -25,7 +25,7 @@
     - **screenY**：触摸目标在屏幕中的Y坐标
     - **identifier**：标识触摸的唯一ID
     - **target**：触摸的DOM节点目标
-### BUG:
+- ### BUG:
     - **问题**：andriod只会触发一次touchstart，一次touchmove，touchend不触发
     - **解决方案**：在touchmove中加入：event.preventDefault(),可fixedBug
     - **注意**：event.preventDefault()会导致默认行为不发生，如scroll，导致页面不滚动

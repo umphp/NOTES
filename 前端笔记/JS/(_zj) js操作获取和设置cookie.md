@@ -2,13 +2,21 @@
 ```
 
 //创建cookie
-function setCookie(name, value, expires, path, domain, secure) {
+function setCookie(opts) {
+    var name=opts.name;
+    var value=opts.value;
+    var exdays=opts.exdays;
+    var path=opts.path;
+    var domain=opts.domain;
+    var secure=opts.secure;
     var cookieText = encodeURIComponent(name) + '=' + encodeURIComponent(value);
-    if (expires instanceof Date) {
-        cookieText += '; expires=' + expires;
+    if (expires) {
+        var d = new Date();
+        d.setTime(d.getTime()+(exdays*24*60*60*1000));
+        cookieText += '; expires=' + d.toGMTString();
     }
     if (path) {
-        cookieText += '; expires=' + expires;
+        cookieText += '; path=' + path;
     }
     if (domain) {
         cookieText += '; domain=' + domain;

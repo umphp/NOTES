@@ -36,4 +36,5 @@ console.log(TemplateEngine(template, {
 
 
 参考：   
-http://web.jobbole.com/56689/
+http://web.jobbole.com/56689/  
+https://segmentfault.com/a/1190000006990480

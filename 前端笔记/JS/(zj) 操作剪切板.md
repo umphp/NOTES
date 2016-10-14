@@ -1,10 +1,12 @@
-
-```
+### 修改复制内容
+```js
+    //获取选中的文字
 　　var getClipText = function() {
         var t = "";
         return window.getSelection ? t = window.getSelection().toString() : window.document.selection && "Control" !== window.document.selection.type && (t = window.document.selection.createRange().text),
             t;
     };
+    //监听copy事件
     document.addEventListener("copy",function(event){
     	var clipboard,setDataText,setDataHtml,getDataText;
     	if(event.clipboardData){
@@ -17,8 +19,8 @@
     		//IE
     		clipboard=window.clipboardData;
     		setDataText=clipboard.setData.bind(clipboard,"text");
-    	}
-		var text=getClipText()+" \n版本信息：.....";
+    	}  
+	    var text=getClipText()+" \n版本信息：.....";
 	    setDataHtml("<div>" + text + "</div>");
 	    setDataText(text);
 	    //Firefox、Safari 和 Chrome 只允许在 onpaste 事件处理程序中访问 getData() 方法,(除非之前已调用setData)
@@ -27,5 +29,5 @@
 	    return event.preventDefault();
     });
 ```
-参考：
+参考：  
     \- **js高三**       

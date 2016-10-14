@@ -1,4 +1,4 @@
-### 兼容IE6的图片预览
+- ### 兼容IE6的图片预览
 ```
 【html代码】：
 <input id="file_upload" type="file" />
@@ -77,7 +77,7 @@ $(function() {
             //将formData作为参数调用send()方法
             xhr.send(formData);
 ```
-### 现代主流浏览器(IE10+):参考高三
+- ### 现代主流浏览器(IE10+):参考高三
 
 ```
 // 【html代码】：

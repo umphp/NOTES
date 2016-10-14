@@ -1,11 +1,11 @@
-### 定宽-自适应
-    #### float + margin
+- ### 定宽-自适应
+    - #### float + margin
         
     ```
     .left{float:left; width:100px;}
     .right{margin-left:120px;}
     ```
-    #### float + margin + fix
+    - #### float + margin + fix
         
     ```
     <div class="left"></div>
@@ -20,41 +20,41 @@
     // 外层再包裹一个容器
     // 兼容性很好，但是多了层 right-fix 的结构
     ```
-    #### float + overflow
+    - #### float + overflow
         
     ```
     .left{float:left; width:100px; margin-right: 20px;}
     .right{overflow:hidden;}
     ```
-    #### table
+    - #### table
         
     ```
     .parent{display:table; width:100%; table-layout:fixed;}
     .left,.right{display:table-cell;}
     .left{width:100px; padding-right:20px;}
     ```
-    #### flex
+    - #### flex
         
     ```
     .parent{display:flex;}
     .left{width:100px; margin-right:20px;}
     .right{flex:1;}
     ```
-### 不定宽-自适应
-    #### float + overflow
+- ### 不定宽-自适应
+    - #### float + overflow
         
     ```
     .left{float:left; margin-right:20px;}
     .right{overflow:hidden;}
     ```
-    #### table
+    - #### table
         
     ```
     .parent{display:table; width:100%;}
     .left,.right{display:table-cell;}
     .left{width:0.1%; padding-right:20px;}
     ```
-    #### flex
+    - #### flex
         
     ```
     .parent{display:flex;}

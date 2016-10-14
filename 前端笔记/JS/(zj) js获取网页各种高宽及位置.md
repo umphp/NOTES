@@ -1,4 +1,4 @@
-### screen对象
+- ### screen对象
   #### 获取屏幕的高宽
 
 ```
@@ -7,7 +7,7 @@ screen.height        //屏幕的高
 screen.availWidth    //屏幕可用宽度   屏幕的像素高度 - 系统部件高度
 screen.availHeight   //屏幕可用高度   屏幕的像素宽度 - 系统部件宽度
 ```
-### window对象
+- ### window对象
   #### 获得窗口位置及大小
 
 ```
@@ -29,8 +29,8 @@ alert(window.outerWidth);   //chrome 1366 ff 1382 ie 1382
 window.outerHeight          //浏览器窗口本身的高度
 alert(window.outerHeight);  //chrome 728 ff 744 ie 744
 ```
-### element对象
-    #### 当不出现滚动条时
+- ### element对象
+    - #### 当不出现滚动条时
 
     ```
     body{margin:0;}
@@ -71,7 +71,7 @@ alert(window.outerHeight);  //chrome 728 ff 744 ie 744
     console.log(document.getElementById('demo').offsetLeft)    //30
     console.log(document.getElementById('demo').offsetTop)    //30
     ```  
-    #### 当出现滚动条时
+    - #### 当出现滚动条时
   
     ```  
     body{
@@ -95,7 +95,7 @@ alert(window.outerHeight);  //chrome 728 ff 744 ie 744
     ##### scrollTop: 向下滑动滚动块时元素隐藏内容的高度。不设置时默认为0，其值随着滚动块滚动而变化
     ##### scrollLeft: 向右滑动滚动块时元素隐藏内容的宽度。不设置时默认为0，其值随着滚动块滚动而变化
 
-### event对象
+- ### event对象
     ##### Event 对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。
 
     **event.pageX** : 相对整个页面的坐标，以页面的左上角为坐标原点到鼠标所在点的水平距离（IE9+，低版本IE可用 event.clientX + (document.body.scrollLeft || document.documentElement.scrollLeft)计算出 ）  

@@ -1,7 +1,7 @@
-#### firefox中滚轮事件为DOMMouseScroll，其他浏览器为mousewheel
-#### firefox中使用event.detail属性，其他浏览器中使用event.wheeldelta
-#### firefox中属性取值±3，其他浏览器中属性取值±120
-#### firefox种负数表示向上，其他浏览器中正数表示向上
+- #### firefox中滚轮事件为DOMMouseScroll，其他浏览器为mousewheel
+- #### firefox中使用event.detail属性，其他浏览器中使用event.wheeldelta
+- #### firefox中属性取值±3，其他浏览器中属性取值±120
+- #### firefox种负数表示向上，其他浏览器中正数表示向上
 
 ```
 // firefox

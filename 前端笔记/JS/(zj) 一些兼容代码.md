@@ -11,7 +11,7 @@ var winH=document.documentElement.clientHeight || document.body.clientHeight;
 ```
 domObj.onclick=function(e){
     var e=e || window.event ; //低版本IE（IE8及以下）必须用window.event引入event对象
-    var eventTarget=e.target || e.srcElement ;
+    var eventTarget=e.target || e.srcElement //IE ;
     e.stopPropagation ? e.stopPropagation() : (e.cancelBubble=true); 
     e.preventDefault ? e.preventDefault() : (e.returnValue=false);
 }
@@ -147,4 +147,18 @@ HTMLElement.prototype.deleteHandler(type , handler , bool){
     }
 }
 ```
-
+### 跨浏览器设置innerText
+```
+function setInnerText(element,text){
+    if(typeof element.textContent == 'string'){
+        element.textContent = text; //firefox
+    }else{
+        element.innerText = text;
+    }
+}  
+```
+### 禁止选取网页内容
+解决方法：  
+FF需要用CSS禁止，IE用JS禁止  
+**IE**: obj.onselectstart = function() {return false;}     
+**FF**: -moz-user-select:none;  

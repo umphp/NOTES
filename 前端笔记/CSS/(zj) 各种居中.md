@@ -1,20 +1,20 @@
-## 单向居中
-    ### 水平居中
-        #### 块元素在父元素中水平居中：
+- ## 单向居中
+    - ### 水平居中
+        - #### 块元素在父元素中水平居中：
             
             ```
             margin : 0 auto;
             ```
-        #### 元素中的单行文字水平居中：
+        - #### 元素中的单行文字水平居中：
 
             ```
             text-align:center;
             ```
-    ### 垂直居中
-        #### 元素中的单行文字垂直居中：
+    - ### 垂直居中
+        - #### 元素中的单行文字垂直居中：
             设置元素高度（height）和行高（line-height）值相同
-## 水平垂直居中
-    ### 图片水平垂直居中
+- ## 水平垂直居中
+    - ### 图片水平垂直居中
         
     ```
     //IE8+
@@ -43,7 +43,7 @@
         vertical-align: middle; 
     }
     ```
-    ### 多行文本水平垂直居中
+    - ### 多行文本水平垂直居中
     
     ```
     .box{ 
@@ -57,7 +57,7 @@
         vertical-align:middle;
     }
     ```
-    ### position + margin (1) (定宽高)
+    - ### position + margin (1) (定宽高)
             
     ```
     /** 绝对定位（absolute）或固定定位（fixed）
@@ -80,7 +80,7 @@
     }
     
     ```
-    ### position + margin (2) (定宽高)
+    - ### position + margin (2) (定宽高)
         
     ```
     // IE6+
@@ -96,7 +96,7 @@
         margin-top:-50px;
     }
     ```
-    ### position + transform 
+    - ### position + transform 
         
     ```
     // IE9+
@@ -113,7 +113,7 @@
         margin:auto;
     }
     ```
-    ### table + vertical-align + margin
+    - ### table + vertical-align + margin
         
     ```
     //注意：table类元素宽度由子元素撑开
@@ -126,7 +126,7 @@
         vertical-align:middle;
     }
     ```
-    ### flexbox (1)
+    - ### flexbox (1)
         
     ```
     .parent{
@@ -135,7 +135,7 @@
         align-items:center; // 子元素垂直居中
     }
     ```
-    ### flexbox (2)
+    - ### flexbox (2)
     
     ```
     .parent{
@@ -150,7 +150,7 @@
         margin: auto;
     }
     ```
-    ### table-cell + vertical-align + text-align + inline-block   
+    - ### table-cell + vertical-align + text-align + inline-block   
         
     ```
     // IE8+
@@ -164,7 +164,7 @@
         vertical-align:middle;
     }
     ```
-    ### position + table-cell
+    - ### position + table-cell
         
     ```
     // IE6+
