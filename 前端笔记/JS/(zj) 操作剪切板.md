@@ -1,4 +1,5 @@
 ### 修改复制内容
+
 ```js
     //获取选中的文字
 　　var getClipText = function() {
@@ -30,4 +31,14 @@
     });
 ```
 参考：  
-    \- **js高三**       
+    \- **js高三**     
+### 复制文本域内文字
+
+```js
+    //只针对input和textarea文本域元素，其他元素无法调用select方法
+    function copyText(element){
+        element.select(); //选中对象
+        document.execCommand("Copy"); //执行复制命令
+    }
+
+```
