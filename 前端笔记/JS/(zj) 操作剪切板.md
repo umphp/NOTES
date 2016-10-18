@@ -42,3 +42,6 @@
     }
 
 ```
+参考：   
+http://www.cnblogs.com/tylerdonet/p/4533782.html  
+https://segmentfault.com/a/1190000005342443

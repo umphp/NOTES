@@ -49,7 +49,6 @@ console.log(child instanceof Child); // true
 **缺点**：  
 　　1.效率较低，内存占用高（因为要拷贝父类的属性）  
 　　2.无法获取父类不可枚举的方法（不可枚举方法，不能使用for in 访问到）  
-**推荐指数**：★（缺点1）  
 ### 2.原型链继承
 **核心**： 将父类的实例作为子类的原型
 ```js
@@ -159,3 +158,4 @@ console.log(obj2.array); // [1,2,3]
 http://www.cnblogs.com/humin/p/4556820.html  
 http://javapolo.iteye.com/blog/1996871  
 https://segmentfault.com/a/1190000004730936  
+《高三 6.3》
