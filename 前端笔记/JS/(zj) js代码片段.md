@@ -1,6 +1,5 @@
-- #### 数组去重
-
-```
+### 数组去重
+```js
 function uniq(arr,returnNew){
    //默认修改原数组;returnNew参数为true时不修改原数组，而是返回新数组
    if(returnNew){
@@ -17,51 +16,49 @@ function uniq(arr,returnNew){
 }
 var arr=[0,2,1,'2',7,1,0];
 console.log( uniq(arr) ); // [0,2,1,'2',7]
-
 ```
-- #### 数组随机排序
-    - ##### 不完全随机(限数值类型)
-        
-    ```
-    function random_arr(arr，returnNew){
-         //默认修改原数组;returnNew参数为true时不修改原数组，而是返回新数组
-        if(returnNew){
-            arr=arr.concat();
-        }
-        arr.sort(function(a,b){
-            return ( Math.random()-0.5 );
-        });
-    }
-    ```
-   
-    - ##### 完全随机(不限值类型)
 
-    ```
-    function randomArr(arr,returnNew){
-        //默认修改原数组;returnNew参数为true时不修改原数组，而是返回新数组
-        if(returnNew){
-            arr=arr.concat();
-        }
-	    var len=arr.length;
-	    var random;
-	    while(len>0){
-		    random=Math.floor( Math.random()*len );
-		    arr.push( arr[random] );
-		    arr.splice(random,1);
-		    len--;
-	    }
+### 数组随机排序
+- **不完全随机(限数值类型)**    
+```js
+function random_arr(arr，returnNew){
+     //默认修改原数组;returnNew参数为true时不修改原数组，而是返回新数组
+    if(returnNew){
+        arr=arr.concat();
     }
-    ```
-- #### 创建值均为"a"，长度为1000的数组(限字符串)
-    
+    arr.sort(function(a,b){
+        return ( Math.random()-0.5 );
+    });
+}
 ```
+
+- **完全随机(不限值类型)**
+```js
+function randomArr(arr,returnNew){
+    //默认修改原数组;returnNew参数为true时不修改原数组，而是返回新数组
+    if(returnNew){
+        arr=arr.concat();
+    }
+  var len=arr.length;
+  var random;
+  while(len>0){
+    random=Math.floor( Math.random()*len );
+    arr.push( arr[random] );
+    arr.splice(random,1);
+    len--;
+  }
+}
+```
+
+### 创建值均为"a"，长度为1000的数组(限字符串)
+```js
 function newArr(str,length){
     return new Array(length+1).join(str).split("");
 }
 ```
-- #### 输出字符串中重复次数最多的字符及其次数
 
-```
+### 输出字符串中重复次数最多的字符及其次数
+```js
 function maxOfStr(str){
   var max_times=0,max_char,
   str_arr=[],charNum;
@@ -82,11 +79,10 @@ function maxOfStr(str){
 
 var str="11333331hhdsafdsiiisd";
 maxOfStr(str);  // { max_char:"3",max_times:5 }
+```
 
-```
-- #### 获取元素相对文档左上角的距离
- 
-```
+### 获取元素相对文档左上角的距离
+```js
 function getPos(ele){
     var left=0,top=0;
     while(ele && ele.offsetParent!=null){
@@ -101,9 +97,8 @@ function getPos(ele){
 }
 ```
 
-- #### 将时间转化为14位数值字符串
-
-```
+### 将时间转化为14位数值字符串
+```js
 function timeToDigit(dateStr){
   dateStr=dateStr.replace(/[^\d]+/g,"");
   var len=dateStr.length;
@@ -113,9 +108,9 @@ function timeToDigit(dateStr){
   return dateStr;
 }
 ```
-- #### 将14位数值字符串转为对象
 
-```
+### 将14位数值字符串转为对象
+```js
 /***将14位数值字符串转为对象: timeObj--时间对象 ,timeStr--指定格式时间字符串
  *
  * @params opts(对象): type--输出时间格式  time--需要转换的纯数值字符串（14位）
@@ -159,9 +154,9 @@ function timeFormat(opts){
 
 }
 ```
-- #### 数据类型判断
 
-```
+### 数据类型判断
+```js
 function zj_typeof(data){
    var type=typeof data;
    type=type.toLowerCase();
@@ -172,10 +167,8 @@ function zj_typeof(data){
 }
 ```
 
-
-- #### 类似jquery的jQuery.extend()的方法
-
-```
+### 类似jquery的jQuery.extend()的方法
+```js
 /*** obj扩展方法(类似jQuery.extend)，返回被扩展的对象扩展之后的状态,考虑数组和对象这两种情况
  *
  * @param deep (boolean) 是否深度扩展 (可省略，默认false)
@@ -254,11 +247,10 @@ function extend(){
   loop(origin,extra);
   return origin;
 }
-
-``` 
-- #### 对象深层复制
-
 ```
+ 
+### 对象深层复制
+```js
 // 1.使用上面封装的 extend(true,{},obj)
 
 // 2.使用JSON.parse()和JSON.stringify()
