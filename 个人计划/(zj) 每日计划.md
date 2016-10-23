@@ -23,3 +23,4 @@ http://www.cnblogs.com/tugenhua0707/p/5180841.html
 - [ ] swagger ui
 - [ ] 正则替换子字符串
 - [ ] 原生js的DOM遍历方法
+- [ ] 解除元素上某个事件的所有处理函数
