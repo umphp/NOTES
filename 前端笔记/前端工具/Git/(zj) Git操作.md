@@ -146,7 +146,8 @@
     - ##### git stash clear
         \- 就是清空所有暂存区的记录  
 - #### 推送分支
-    \- git push origin <branch_name>
+    \- git push origin <branch_name>  
+    \- git push -f origin <branch_name>  (强制推送)
 - #### 创建标签
     - ##### git tag <tag_name>
         \- 默认标签是打在最新提交的commit上  

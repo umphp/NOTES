@@ -31,5 +31,5 @@
 - [ ] **拖拽**  
     \- http://rubaxa.github.io/Sortable/  
     \- http://www.zhangxinxu.com/wordpress/2011/02/html5-drag-drop-%E6%8B%96%E6%8B%BD%E4%B8%8E%E6%8B%96%E6%94%BE%E7%AE%80%E4%BB%8B/
-- [ ] **history对象：replaceState**  
+- [x] **history对象：replaceState**  
     \- https://developer.mozilla.org/zh-CN/docs/DOM/Manipulating_the_browser_history

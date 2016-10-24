@@ -139,8 +139,8 @@
             - ##### search方法不执行全局匹配，它将忽略修饰符g，并且总是从字符串的开始开始检索
             
                 ```
-                'a122fdsf'.search(1); // true 底层将1转换为正则
-                'a122fdsf'.search(/1/); // true 
+                'a122fdsf'.search(1); // 1 底层将1转换为正则
+                'a122fdsf'.search(/1/); // 1 
                 ```
         - #### String.prototype.match(reg)
             - ##### match方法将检索字符串，以找到一个或多个与正则匹配的文本

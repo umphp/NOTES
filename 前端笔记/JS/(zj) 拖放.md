@@ -17,19 +17,25 @@
 ### 事件的执行顺序 ：
 - **drop不触发的时候**  
 dragstart  >  drag >  dragenter >  dragover >  dragleave > dragend
-- **drop触发的时候**(dragover的时候阻止默认事件)  
+- **drop触发的时候**(dragover的时候阻止默认事件，最好dragenter的时候也阻止默认事件)  
 dragstart  >  drag >  dragenter >  dragover >  drop > dragend
 
 ### 不能释放的光标和能释放的光标不一样
 
 ### 解决火狐下的问题
-\- 必须设置dataTransfer对象才可以拖拽除图片外的其他标签
+\- 必须在ondragstart事件处理函数中设置dataTransfer对象才可以拖拽除图片外的其他标签  
+\- 取消 drop 事件的默认行为
+
 
 # dataTransfer对象
 **setData()** : 设置数据 key和value(必须是字符串)  
 **getData()** : 获取数据，根据key值，获取对应的value  
+**dropEffect** :   
+\- 设置被拖动的元素能够执行哪种放置行为(none,move,copy,link) ,不同值光标显示为不同的符号
+\- 只有搭配 effectAllowed 属性才有用  
 **effectAllowed** :  
-\- 设置光标样式(none, copy, copyLink, copyMove, link, linkMove, move, all 和 uninitialized)  
+\- 设置光标样式(none, copy, copyLink, copyMove, link, linkMove, move, all 和 uninitialized)   
+\- 必须在 ondragstart 事件处理程序中设置 effectAllowed 属性  
 **setDragImage**  
 \- 三个参数：指定的元素，坐标X，坐标Y  
 **files**  

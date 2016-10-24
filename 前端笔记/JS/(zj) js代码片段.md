@@ -81,14 +81,17 @@ var str="11333331hhdsafdsiiisd";
 maxOfStr(str);  // { max_char:"3",max_times:5 }
 ```
 
-### 获取元素相对文档左上角的距离
+### 获取元素相对祖先元素或文档左上角的距离
 ```js
-function getPos(ele){
+function getPos(ele,ancestor){
     var left=0,top=0;
     while(ele && ele.offsetParent!=null){
         left+=ele.offsetLeft;
         top+=ele.offsetTop;
         ele=ele.offsetParent;
+        if(ele === ancestor){
+            break;
+        }
     }
     return {
         left:left,
@@ -259,7 +262,36 @@ function deepCopy(obj){
 }
 ```
 
+### 判断某节点是否是另一节点的后代
+```js
+/*
+*Node.contains(otherNode)返回一个布尔值来表示是否传入的节点是，该节点的子节点。
+*如果 otherNode 是 Node 的后代节点或是 Node 节点本身.则返回true , 否则返回 false.
+*参考：https://developer.mozilla.org/zh-CN/docs/Web/API/Node/contains
+*/
 
+/*
+*compareDocumentPosition() IE8+
+*方法比较两个节点，并返回描述它们在文档中位置的整数。
+*参考：http://www.w3school.com.cn/jsref/met_node_comparedocumentposition.asp
+*/
+
+function elContains(ancestor,descendant){
+    return ancestor.contains ? ancestor.contains(descendant) :  !!(a.compareDocumentPosition(arg) & 16);
+}
+```
+
+### 获取元素样式
+```js
+// 注意如果样式是尺寸类，且display属性为none，不能获取计算后的值，而是设置的值如百分比等
+function getStyle(obj,attr){
+    if(obj.currentStyle){
+        return obj.currentStyle[attr];
+    }else{
+        return window.getComputedStyle(obj,null)[attr];
+    }
+}
+```
 
 
 
