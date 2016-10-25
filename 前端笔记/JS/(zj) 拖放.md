@@ -28,10 +28,10 @@ dragstart  >  drag >  dragenter >  dragover >  drop > dragend
 
 
 # dataTransfer对象
-**setData()** : 设置数据 key和value(必须是字符串)  
+**setData()** : 设置数据 key和value(必须是字符串),保存在 dataTransfer 对象中的数据只能在 **drop** 事件处理程序中读取    
 **getData()** : 获取数据，根据key值，获取对应的value  
 **dropEffect** :   
-\- 设置被拖动的元素能够执行哪种放置行为(none,move,copy,link) ,不同值光标显示为不同的符号
+\- 设置被拖动的元素能够执行哪种放置行为(none,move,copy,link) ,不同值光标显示为不同的符号  
 \- 只有搭配 effectAllowed 属性才有用  
 **effectAllowed** :  
 \- 设置光标样式(none, copy, copyLink, copyMove, link, linkMove, move, all 和 uninitialized)   
