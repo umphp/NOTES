@@ -81,22 +81,36 @@ var str="11333331hhdsafdsiiisd";
 maxOfStr(str);  // { max_char:"3",max_times:5 }
 ```
 
+### 获取元素样式
+```js
+// 注意如果样式是尺寸类，且display属性为none，不能获取计算后的值，而是设置的值如百分比等
+function getStyle(obj,attr){
+    if(obj.currentStyle){
+        return obj.currentStyle[attr];
+    }else{
+        return window.getComputedStyle(obj,null)[attr];
+    }
+}
+```
+
 ### 获取元素相对祖先元素或文档左上角的距离
 ```js
+//固定定位元素offsetParent属性值为null，但offsetLeft和offsetTop属性值正常
 function getPos(ele,ancestor){
-    var left=0,top=0;
-    while(ele && ele.offsetParent!=null){
-        left+=ele.offsetLeft;
-        top+=ele.offsetTop;
-        ele=ele.offsetParent;
-        if(ele === ancestor){
-            break;
-        }
+  var left=0;
+  var top=0;
+  while( (ele.offsetParent || getStyle(ele,"position")==="fixed" ) && ele!==ancestor){
+    left+=ele.offsetLeft;
+    top+=ele.offsetTop;
+    if( getStyle(ele,"position")==="fixed" ){
+      break;
     }
-    return {
-        left:left,
-        top:top
-    }
+    ele=ele.offsetParent;
+  }
+  return{
+    left:left,
+    top:top
+  }
 }
 ```
 
@@ -280,29 +294,3 @@ function elContains(ancestor,descendant){
     return ancestor.contains ? ancestor.contains(descendant) :  !!(a.compareDocumentPosition(arg) & 16);
 }
 ```
-
-### 获取元素样式
-```js
-// 注意如果样式是尺寸类，且display属性为none，不能获取计算后的值，而是设置的值如百分比等
-function getStyle(obj,attr){
-    if(obj.currentStyle){
-        return obj.currentStyle[attr];
-    }else{
-        return window.getComputedStyle(obj,null)[attr];
-    }
-}
-```
-
-
-
-
-
-
-
-
-
-   
-
-
-
-
