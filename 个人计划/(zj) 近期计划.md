@@ -8,7 +8,7 @@
     \- 
 - [ ] **js原型**
 - [ ] **标签内绑定事件处理函数，引用的变量的解析顺序**
-- [ ] **正则表达式**
+- [x] **正则表达式**
 - [x] **操作剪贴板**  
     \- (zj) 获取、设置剪贴板信息  
     https://segmentfault.com/a/1190000005342443
@@ -33,3 +33,6 @@
     \- http://www.zhangxinxu.com/wordpress/2011/02/html5-drag-drop-%E6%8B%96%E6%8B%BD%E4%B8%8E%E6%8B%96%E6%94%BE%E7%AE%80%E4%BB%8B/
 - [x] **history对象：replaceState**  
     \- https://developer.mozilla.org/zh-CN/docs/DOM/Manipulating_the_browser_history
+- [ ] **前端面试中的常见的算法问题**  
+    \- http://www.jackpu.com/qian-duan-mian-shi-zhong-de-chang-jian-de-suan-fa-wen-ti/
+- [ ] **混合app**

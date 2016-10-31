@@ -73,6 +73,7 @@ person.addHandler("message", handleMessage);
 person.say("Hi there.");
 ```
 ## DOM对象自定义事件
+
 ```js
 function bindHandler(obj,type,handler){
     obj.handlers=obj.handlers || {};

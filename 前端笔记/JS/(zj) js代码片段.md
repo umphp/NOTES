@@ -1,87 +1,5 @@
-### 数组去重
-```js
-function uniq(arr,returnNew){
-   //默认修改原数组;returnNew参数为true时不修改原数组，而是返回新数组
-   if(returnNew){
-        arr=arr.concat();
-   }
-   for(var i=0;i<arr.length;i++){
-        //Array.prototype.indexOf():ES5方法;内部为全等匹配
-        if( arr.indexOf(arr[i])!==i ){
-            arr.splice(i,1);
-            i--;
-        }
-   } 
-   return arr;
-}
-var arr=[0,2,1,'2',7,1,0];
-console.log( uniq(arr) ); // [0,2,1,'2',7]
-```
-
-### 数组随机排序
-- **不完全随机(限数值类型)**    
-```js
-function random_arr(arr，returnNew){
-     //默认修改原数组;returnNew参数为true时不修改原数组，而是返回新数组
-    if(returnNew){
-        arr=arr.concat();
-    }
-    arr.sort(function(a,b){
-        return ( Math.random()-0.5 );
-    });
-}
-```
-
-- **完全随机(不限值类型)**
-```js
-function randomArr(arr,returnNew){
-    //默认修改原数组;returnNew参数为true时不修改原数组，而是返回新数组
-    if(returnNew){
-        arr=arr.concat();
-    }
-  var len=arr.length;
-  var random;
-  while(len>0){
-    random=Math.floor( Math.random()*len );
-    arr.push( arr[random] );
-    arr.splice(random,1);
-    len--;
-  }
-}
-```
-
-### 创建值均为"a"，长度为1000的数组(限字符串)
-```js
-function newArr(str,length){
-    return new Array(length+1).join(str).split("");
-}
-```
-
-### 输出字符串中重复次数最多的字符及其次数
-```js
-function maxOfStr(str){
-  var max_times=0,max_char,
-  str_arr=[],charNum;
-  while(str.length){
-      str_arr=str.split(str[0]);
-      charNum=str_arr.length-1;
-      if(charNum>max_times){
-          max_times=charNum;
-          max_char=str[0];
-      }
-      str=str_arr.join("");
-  }
-  return {
-    max_char:max_char,
-    max_times:max_times
-  }
-}
-
-var str="11333331hhdsafdsiiisd";
-maxOfStr(str);  // { max_char:"3",max_times:5 }
-```
-
 ### 获取元素样式
+
 ```js
 // 注意如果样式是尺寸类，且display属性为none，不能获取计算后的值，而是设置的值如百分比等
 function getStyle(obj,attr){
@@ -94,6 +12,7 @@ function getStyle(obj,attr){
 ```
 
 ### 获取元素相对祖先元素或文档左上角的距离
+
 ```js
 //固定定位元素offsetParent属性值为null，但offsetLeft和offsetTop属性值正常
 function getPos(ele,ancestor){
@@ -115,6 +34,7 @@ function getPos(ele,ancestor){
 ```
 
 ### 将时间转化为14位数值字符串
+
 ```js
 function timeToDigit(dateStr){
   dateStr=dateStr.replace(/[^\d]+/g,"");
@@ -127,6 +47,7 @@ function timeToDigit(dateStr){
 ```
 
 ### 将14位数值字符串转为对象
+
 ```js
 /***将14位数值字符串转为对象: timeObj--时间对象 ,timeStr--指定格式时间字符串
  *
@@ -173,6 +94,7 @@ function timeFormat(opts){
 ```
 
 ### 数据类型判断
+
 ```js
 function zj_typeof(data){
    var type=typeof data;
@@ -267,6 +189,7 @@ function extend(){
 ```
  
 ### 对象深层复制
+
 ```js
 // 1.使用上面封装的 extend(true,{},obj)
 
@@ -277,6 +200,7 @@ function deepCopy(obj){
 ```
 
 ### 判断某节点是否是另一节点的后代
+
 ```js
 /*
 *Node.contains(otherNode)返回一个布尔值来表示是否传入的节点是，该节点的子节点。
@@ -294,3 +218,22 @@ function elContains(ancestor,descendant){
     return ancestor.contains ? ancestor.contains(descendant) :  !!(a.compareDocumentPosition(arg) & 16);
 }
 ```
+
+### 图片预加载
+参考：http://www.jb51.net/article/32761.htm
+```js
+function loadImage(url, callback) { 
+    var img = new Image(); //创建一个Image对象，实现图片的预下载 
+    img.src = url; 
+    if (img.complete) { // 如果图片已经存在于浏览器缓存，直接调用回调函数 
+        callback.call(img); 
+        return; // 直接返回，不用再处理onload事件 
+    } 
+    img.onload = function () { //图片下载完毕时异步调用callback函数。 
+        callback.call(img); //将回调函数的this替换为Image对象 
+    }; 
+}; 
+
+```
+
+
