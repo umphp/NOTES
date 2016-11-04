@@ -36,3 +36,6 @@
 - [ ] **前端面试中的常见的算法问题**  
     \- http://www.jackpu.com/qian-duan-mian-shi-zhong-de-chang-jian-de-suan-fa-wen-ti/
 - [ ] **混合app**
+- [ ] **每周一点canvas**  
+    \- https://github.com/supperjet/H5-Animation  
+    \- https://segmentfault.com/u/worengjiuzaizheli

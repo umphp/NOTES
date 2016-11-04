@@ -92,6 +92,26 @@ function timeFormat(opts){
 
 }
 ```
+### 对象中的所有属性值均转为字符串类型
+
+```js
+// obj = $obj[$key]; 用于赋值考虑
+zj.toStringForObj=function fn(obj,$obj,$key){
+  if(zj.typeof(obj)==="object"){
+    for(var key in obj){
+      fn(obj[key],obj,key);
+    }
+  }else if(zj.typeof(obj)==="array"){
+    obj.forEach(function(item,index,array){
+      fn(item,obj,index);
+    })
+  }else{
+    if($obj){
+      $obj[$key]=$obj[$key]===undefined ? "" : $obj[$key]+"";
+    }
+  }
+}
+```
 
 ### 数据类型判断
 
@@ -214,7 +234,7 @@ function deepCopy(obj){
 *参考：http://www.w3school.com.cn/jsref/met_node_comparedocumentposition.asp
 */
 
-function elContains(ancestor,descendant){
+function elContains(descendant,ancestor){
     return ancestor.contains ? ancestor.contains(descendant) :  !!(a.compareDocumentPosition(arg) & 16);
 }
 ```
