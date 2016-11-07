@@ -1,20 +1,21 @@
-# 单向居中
-### 1. 水平居中
+# 1. 单向居中
+### 1.1 水平居中
 #### 块元素在父元素中水平居中：
 
-```
+```css
 margin : 0 auto;
 ```
 #### 元素中的单行文字水平居中：
 
-```
+```css
 text-align:center;
 ```
-### 2. 垂直居中
+### 1.2 垂直居中
 #### 元素中的单行文字垂直居中：
 设置元素高度（height）和行高（line-height）值相同
-# 水平垂直居中
-### 图片水平垂直居中
+
+# 2. 水平垂直居中
+### 2.1 图片水平垂直居中
 
 ```css
 /* IE8+ */
@@ -44,7 +45,7 @@ img{
   vertical-align: middle;
 }
 ```
-### 多行文本水平垂直居中
+### 2.2 多行文本水平垂直居中
 
 ```css
 .box{
@@ -58,7 +59,7 @@ img{
   vertical-align:middle;
 }
 ```
-### position + margin (1) (定宽高)
+### 2.3 position + margin (1) (定宽高)
 
 ```css
 /** 绝对定位（absolute）或固定定位（fixed）
@@ -83,7 +84,7 @@ top:0;bottom:0; 将元素高度变为父元素高度；
 }
 
 ```
-### position + margin (2) (定宽高)
+### 2.4 position + margin (2) (定宽高)
 
 ```css
 /* IE6+ */
@@ -101,7 +102,7 @@ top:0;bottom:0; 将元素高度变为父元素高度；
   margin-top:-50px;
 }
 ```
-### position + transform
+### 2.5 position + transform
 
 ```css
 /* IE9+ */
@@ -121,7 +122,7 @@ top:0;bottom:0; 将元素高度变为父元素高度；
 }
 ```
 
-### calc
+### 2.6 calc
 ```css
 /* IE9+ */
 .parent{
@@ -137,7 +138,7 @@ top:0;bottom:0; 将元素高度变为父元素高度；
 }
 ```
 
-### table + vertical-align + margin
+### 2.7 table + vertical-align + margin
 
 ```css
 /* IE8+ */
@@ -151,7 +152,7 @@ top:0;bottom:0; 将元素高度变为父元素高度；
   vertical-align:middle;
 }
 ```
-### flexbox (1)
+### 2.8 flexbox (1)
 
 ```css
 .parent{
@@ -160,7 +161,7 @@ top:0;bottom:0; 将元素高度变为父元素高度；
   align-items:center; /* 子元素垂直居中 */
 }
 ```
-### flexbox (2)
+### 2.9 flexbox (2)
 
 ```css
 .parent{
@@ -176,7 +177,7 @@ top:0;bottom:0; 将元素高度变为父元素高度；
 }
 ```
 
-### table-cell + vertical-align + text-align + inline-block   
+### 2.10 table-cell + vertical-align + text-align + inline-block   
 
 ```css
 /* IE8+ */
@@ -190,7 +191,7 @@ top:0;bottom:0; 将元素高度变为父元素高度；
   vertical-align:middle;
 }
 ```
-### position + table-cell
+### 2.11 position + table-cell
 
 ```html
 <!-- IE6+ -->
@@ -228,8 +229,7 @@ top:0;bottom:0; 将元素高度变为父元素高度；
   }
 </style>
 
-
 ```
 
-参考：  
-http://www.cnblogs.com/xianyulaodi/p/5863305.html
+**参考**：    
+- http://www.cnblogs.com/xianyulaodi/p/5863305.html
