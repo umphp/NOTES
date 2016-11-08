@@ -1,5 +1,5 @@
 ### 数组去重
-- **利用Array.prototype.indexOf()** 
+- **利用Array.prototype.indexOf()**
 
 ```js
 function uniq(arr,returnNew){
@@ -13,7 +13,7 @@ function uniq(arr,returnNew){
             arr.splice(i,1);
             i--;
         }
-   } 
+   }
    return arr;
 }
 var arr=[0,2,1,'2',7,1,0];
@@ -114,7 +114,7 @@ maxOfStr(str);  // { max_char:"3",max_times:5 }
 function maxOfStr(str){
     var max_times=0,max_char,
     obj={};
-    
+
     for(var i=0,len=str.length;i<len;i++){
         if(obj[str.charAt(i)] === undefined){
             obj[str.charAt(i)]=1;
@@ -122,14 +122,14 @@ function maxOfStr(str){
             obj[str.charAt(i)]++;
         }
     }
-    
+
     for(var key in obj){
         if(obj[key]>max_times){
             max_times=obj[key];
             max_char=key;
         }
     }
-    
+
     return {
         max_char:max_char,
         max_times:max_times
@@ -143,7 +143,7 @@ function maxOfStr(str){
 ```js
 function bubbleSort(arr) {  
     for(var i = 0,len=arr.length;i<len-1;i++) {
-        for(var  j = i+1;j<len;j++) { 
+        for(var  j = i+1;j<len;j++) {
           if(arr[i]>arr[j]) {
                 var  tem = arr[i];
                 arr[i] = arr[j];
@@ -165,5 +165,43 @@ function swap(a , b) {
   return [a,b];
 }
 ```
-### 
+### 找出下列正数组的最大差值
+\- [10,5,11,7,8,9]  
+\- 思路：最大差值肯定是一个数组中最大值与最小值的差  
 
+```js
+// 兼容版本
+function maxGap(arr){
+  var max=arr[0];
+  var min=arr[0];
+  for(var i=1,len=arr.length;i<len;i++){
+    max=Math.max(max,arr[i]);
+    min=Math.min(min,arr[i]);
+  }
+  return max-min;
+}
+// 利用Array.prototype.sort()
+function maxGap(arr){
+  var clone=arr.concat();
+  var len=clone.length;
+  //冒泡排序
+  clone.sort(function(a,b){
+    return a-b;
+  })
+  return clone[len-1] - clone[0];
+}
+
+```
+
+### 随机生成指定长度的字符串
+
+```js
+function randomStr(len){
+  var str='abcdefghijklmnopqrstuvwxyz9876543210';
+  var tmp='';
+  for(var i=0;i<len;i++){
+    tmp+=str.charAt( Math.floor( Math.random()*str.length ) );
+  }
+  return tmp;
+}
+```

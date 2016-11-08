@@ -63,9 +63,10 @@ jsonp("https://www.baidu.com",{},"getData",function(data){
 \- 详见《 H5跨文档消息通信（妙味）》  
 \- 详见《前端跨域整理   Damonare的个人博客.png》
 
-参考：  
-　https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS  
-　http://bbs.miaov.com/forum.php?mod=viewthread&tid=5551  
-　http://tingandpeng.com/2016/09/05/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E8%B7%B5/  
-　http://damonare.github.io/2016/10/30/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/#more  
-  《前端跨域整理   Damonare的个人博客.png》
+**参考**：  
+- https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS  
+- http://bbs.miaov.com/forum.php?mod=viewthread&tid=5551  
+- http://tingandpeng.com/2016/09/05/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E8%AF%B7%E6%B1%82%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E8%B7%B5/  
+- http://damonare.github.io/2016/10/30/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F%E6%95%B4%E7%90%86/#more  
+- http://www.cnblogs.com/2050/p/3191744.html  
+- 《前端跨域整理   Damonare的个人博客.png》
