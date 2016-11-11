@@ -116,18 +116,19 @@ function timeFormat(opts){
 
 ```js
 // obj = $obj[$key]; 用于赋值考虑
-zj.toStringForObj=function fn(obj,$obj,$key){
+// $obj和$key只做内部使用
+function toStringForObj(obj,$obj,$key){
   if(zj.typeof(obj)==="object"){
     for(var key in obj){
-      fn(obj[key],obj,key);
+      toStringForObj(obj[key],obj,key);
     }
   }else if(zj.typeof(obj)==="array"){
     obj.forEach(function(item,index,array){
-      fn(item,obj,index);
+      toStringForObj(item,obj,index);
     })
   }else{
     if($obj){
-      $obj[$key]=$obj[$key]===undefined ? "" : $obj[$key]+"";
+      $obj[$key] = $obj[$key]===undefined ? "" : $obj[$key]+"";
     }
   }
 }

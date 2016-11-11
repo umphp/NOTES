@@ -16,7 +16,7 @@
 - [ ] **vue.js**
 - [ ] **webpack**
 - [ ] **viewport/touch事件**
-- [ ] **各版本的flex-box**
+- [x] **各版本的flex-box**
 - [x] **fiddler**
 - [ ] **meteor**
 - [ ] **缓存**  
@@ -33,9 +33,10 @@
     \- http://www.zhangxinxu.com/wordpress/2011/02/html5-drag-drop-%E6%8B%96%E6%8B%BD%E4%B8%8E%E6%8B%96%E6%94%BE%E7%AE%80%E4%BB%8B/
 - [x] **history对象：replaceState**  
     \- https://developer.mozilla.org/zh-CN/docs/DOM/Manipulating_the_browser_history
-- [ ] **前端面试中的常见的算法问题**  
+- [x] **前端面试中的常见的算法问题**  
     \- http://www.jackpu.com/qian-duan-mian-shi-zhong-de-chang-jian-de-suan-fa-wen-ti/
 - [ ] **混合app**
 - [ ] **每周一点canvas**  
     \- https://github.com/supperjet/H5-Animation  
     \- https://segmentfault.com/u/worengjiuzaizheli
+- [ ] **js内存泄漏**
