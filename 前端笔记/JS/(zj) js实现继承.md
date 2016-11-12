@@ -154,8 +154,9 @@ obj1.array.push(4);
 console.log(obj1.array); // [1,2,3,4]
 console.log(obj2.array); // [1,2,3]
 ```
-参考：  
-http://www.cnblogs.com/humin/p/4556820.html  
-http://javapolo.iteye.com/blog/1996871  
-https://segmentfault.com/a/1190000004730936  
-《高三 6.3》
+
+**参考**：  
+- http://www.cnblogs.com/humin/p/4556820.html  
+- http://javapolo.iteye.com/blog/1996871  
+- https://segmentfault.com/a/1190000004730936  
+- 《高三 6.3》
