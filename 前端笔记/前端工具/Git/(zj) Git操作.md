@@ -6,6 +6,9 @@
     \- git config --global user.email  
     \- git config --global --list  
     \- 去掉global参数，即为本项目配置
+- #### 创建命令快捷方式
+`git config --global alias.<alias-name> <git-command>`  
+例如：git config --global alias.pom 'push origin master'
 - #### git bash 配置
     \- **保存认证**：git config --global credential.helper store  
     \- **忽略ssl证书**：git config --global http.sslVerify false  
@@ -62,7 +65,7 @@
         \- git checkout -- example.txt (撤销工作区修改)  
     - ##### 修改后 add并commit了，需要撤销修改时：  
         \- git reset --hard HEAD^  (版本回退)  
-        \- git checkout [commit_id] [file] 恢复某个commit的指定文件到暂存区和工作区
+        \- git checkout [commit_id] [file] 恢复某个commit的指定（全部）文件到暂存区和工作区
 
 - #### 删除文件
     - ##### 将文件放入暂存区并提交
@@ -127,7 +130,7 @@
     \- branch_zj分支对example.txt做了修改，add和commit后，切换到master分支  
     \- 同样在master分支修改example.txt，add和commit后，没有这一步一般不会冲突    
     \- 执行：git merge branch_zj  
-    \- 提示冲突,修改文件
+    \- 提示冲突,修改文件  
     \- 再执行add和commit  
     \- git branch -d branch_zj 删除被合并的分支
 - #### 强制禁用Fast forward模式

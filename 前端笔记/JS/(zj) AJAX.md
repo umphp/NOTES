@@ -38,6 +38,12 @@ xhr.send(string)
 
 // xhr.onreadystatechange事件
 ```
+### 5.abort()方法
+XMLHttpRequest.abort() 方法将终止请求，如果该请求已被发出。  
+当一个请求被终止，它的 readyState 属性将被置为0（ UNSENT ），但是并不触发 readystatechange 事件
+
+参考：https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/abort
+
 ### 完整实例
 ```js
 var xhr;
@@ -49,6 +55,16 @@ try{
 
 //绑定请求状态变化事件
 xhr.onreadystatechange=function(){
+/*
+    // 获取服务器时间 (通过返回头)
+    if (xhr.readyState === 3) {
+      var now = xhr.getResponseHeader('Date');
+      now=(new Date(now).valueOf());
+      //获取到服务器时间后终止请求
+      xhr.abort();
+    }
+    
+*/
     if(xhr.readystate==4){
         if(xhr.status==200){
             alert(xhr.responseText);
