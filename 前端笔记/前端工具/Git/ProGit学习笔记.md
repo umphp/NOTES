@@ -392,3 +392,38 @@ git push [remote-name] --delete [remote-branch-name]
 基本上这个命令做的只是从服务器上移除这个指针
 
 ### 变基
+#### 变基的基本操作
+将当前分支变基到另外一个分支
+```shell
+git rebase <branch-name>
+```
+切换到变基目标分支，然后合并变基的分支(快速合并)
+```shell
+git checkout <another-branch-name>
+git merge <rebased-branch-name>
+```
+结果和普通合并（三方合并）相同
+
+#### 变基高级操作 
+```shell
+git rebase --onto <to-branch-name> <another-branch-name> <rebase-branch-name>
+```
+取出 `<rebase-branch-name>` 分支,找出处于`<rebase-branch-name>`分支和`<another-branch-name>`分支的共同祖先之后的修改,然后把它们在 `<to-branch-name>`分支上重演一遍(即变基到该分支)。然后快速合并，命令同基本操作
+
+```shell
+git rebase <to-branch-name> <rebase-branch-name>
+```
+将`<rebase-branch-name>`变基到`<to-branch-name>`。然后快速合并，命令同基本操作
+
+变基合并到主分支后，可删除变基分支
+
+#### 变基的风险
+**变基的准则**：
+**不要对在你的仓库外有副本的分支执行变基。**
+
+#### 用变基解决变基
+
+
+
+
+
