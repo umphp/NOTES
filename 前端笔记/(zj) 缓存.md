@@ -75,9 +75,11 @@ Pragma:no-cache
 ## 6. HTTP Cache备选方案
 ### 6.1 LocalStorage
 ### 6.2 Web databases
-参考:  
-http://www.imooc.com/video/10627    
-https://github.com/fouber/blog/issues/6  
-https://aotu.io/notes/2016/03/16/optimization/  
-https://aotu.io/notes/2016/09/22/http-caching/  
-https://segmentfault.com/a/1190000004486640
+
+**参考**:  
+- http://www.imooc.com/video/10627    
+- https://github.com/fouber/blog/issues/6  
+- https://aotu.io/notes/2016/03/16/optimization/  
+- https://aotu.io/notes/2016/09/22/http-caching/  
+- https://segmentfault.com/a/1190000004486640  
+- http://div.io/topic/745

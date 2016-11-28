@@ -1,5 +1,3 @@
-- #### git地址
-    https://git.oschina.net/0703/yijicai-wap-web.git
 - #### wap端功能
     - [x]  **去掉欢迎界面**  
         \- main.js
