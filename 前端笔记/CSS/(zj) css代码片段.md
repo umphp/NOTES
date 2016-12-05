@@ -1,13 +1,3 @@
-- #### 单行文本超出显示省略号：
-    
-```
-.newsItem .newsText{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width:100px;
-}
-```
 - #### 伪类中文字换行
 
 ```
@@ -21,13 +11,15 @@ div:after{
 ```
 //单行文本溢出...
 .in_a_line{
+    width:100px;
     overflow:hidden;
     white-space:nowrap;
     text-overflow:ellipsis;
 }
-//多行文本溢出...
+//多行文本溢出...(多用于移动端)
 .in_two_line{
     display:-webkit-box !important;
+    width:100px;
     overflow:hidden;
     text-overflow:ellipsis;
     word-break:break-all;

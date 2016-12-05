@@ -423,7 +423,19 @@ git rebase <to-branch-name> <rebase-branch-name>
 
 #### 用变基解决变基
 
+## 分布式Git
+### 分布式工作流程
+- **集中式工作流**
+- **集成管理者工作流**
+- **司令官与副官工作流**
 
+### 向一个项目贡献
+```shell
+git push -u <remote-name> <local-branch>:<remote-branch>
+```
+`-u`是`--set-upstream`的简写，加上`:`表示将本地某分支推送到远程某分支
 
-
-
+```shell
+git log <branch1>..<branch2>
+```
+`..`是一种日志过滤器。表示只显示在`<branch2>`但不在`<branch1>`的提交的列表
