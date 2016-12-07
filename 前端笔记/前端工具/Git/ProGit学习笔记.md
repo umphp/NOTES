@@ -306,11 +306,16 @@ git merge <branch-name>
 ```
 #### 删除分支
 ```shell
-git merge -d <branch-name>
+git branch -d <branch-name>
 ```
-未被合并的分支需执行`git merge -D <branch-name>`删除（强制删除）
+未被合并的分支需执行`git branch -D <branch-name>`删除（强制删除）
 #### 遇到冲突时的分支合并
 在合并冲突后的任意时刻使用 `git status` 命令来查看那些因包含合并冲突而处于未合并（unmerged）状态的文件
+
+**放弃合并**
+```shell
+git merge --abort
+```
 
 使用图形化工具解决冲突
 ```shell
