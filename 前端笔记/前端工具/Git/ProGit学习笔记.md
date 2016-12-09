@@ -436,6 +436,11 @@ git rebase <to-branch-name> <rebase-branch-name>
 
 ### 向一个项目贡献
 ```shell
+ git diff --check
+```
+检查空白错误（行尾的空格、Tab 制表符，和行首空格后跟 Tab 制表符的行为）
+
+```shell
 git push -u <remote-name> <local-branch>:<remote-branch>
 ```
 `-u`是`--set-upstream`的简写，加上`:`表示将本地某分支推送到远程某分支
