@@ -99,7 +99,7 @@ offsetLeft = (offsetParent的margin-left) + (offsetParent的border宽度) + (off
 // firefox
 offsetLeft = (offsetParent的margin-left) + (offsetParent的padding-left) + (当前元素的margin-left)
 ```  
-### 3.2 当出现滚动条时
+### 3.2 当出现滚动条时（或者说是实际尺寸）
 
 ```html
 <style>

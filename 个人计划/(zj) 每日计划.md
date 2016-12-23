@@ -27,3 +27,5 @@ http://www.cnblogs.com/tugenhua0707/p/5180841.html
 - [ ] 解除元素上某个事件的所有处理函数
 - [x] IE低版本hack (html方式和css方式)
 - [ ] 长连接
+- [ ] 判断鼠标移入容器方向  
+http://www.jb51.net/article/99665.htm

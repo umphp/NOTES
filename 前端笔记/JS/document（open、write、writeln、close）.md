@@ -38,6 +38,17 @@ window.open() 方法用于打开一个新的浏览器窗口或查找一个已命
 - replace  
  可选的布尔值。规定了装载到窗口的 URL 是在窗口的浏览历史中创建一个新条目，还是替换浏览历史中的当前条目
 
+**打开新窗口被拦截**  
+解决办法：
+- 同域路径窗口不会被拦截
+- 先打开空窗口，然后修改新窗口url地址
+```js
+var newWin = window.open();
+// ajax获取url地址数据后,修改新窗口页面路径
+newWin.location.href = "http://www.baidu.com";
+
+```
+
 **注意**  
 注意window.open() 和 document.open()的区别
 

@@ -34,8 +34,15 @@
     \- https://developer.mozilla.org/zh-CN/docs/DOM/Manipulating_the_browser_history
 - [x] **前端面试中的常见的算法问题**  
     \- http://www.jackpu.com/qian-duan-mian-shi-zhong-de-chang-jian-de-suan-fa-wen-ti/
-- [ ] **混合app**
+- [ ] **混合app : ionic**
 - [ ] **每周一点canvas**  
     \- https://github.com/supperjet/H5-Animation  
     \- https://segmentfault.com/u/worengjiuzaizheli
 - [ ] **js内存泄漏**
+- [ ] **node.js**
+- [ ] **混合app：热更新**  
+native端的热更新，android有Tinker（微信）和Hotfix（阿里）。ios有jspatch
+- [ ] **判断鼠标进入容器的方向**
+- [ ] **qq浏览器官网**
+- [ ] **自定义滚动条**
+- [ ] **defineProperty**
