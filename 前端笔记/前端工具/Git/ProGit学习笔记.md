@@ -304,6 +304,8 @@ git checkout -b <new-branch-name>
 ```shell
 git merge <branch-name>
 ```
+`--no-commit` 选项在默认合并过程中可以用来延迟(即仅合并，需手动提交)
+生成合并提交
 #### 删除分支
 ```shell
 git branch -d <branch-name>

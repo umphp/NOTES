@@ -46,3 +46,5 @@ native端的热更新，android有Tinker（微信）和Hotfix（阿里）。ios�
 - [ ] **qq浏览器官网**
 - [ ] **自定义滚动条**
 - [ ] **defineProperty**
+- [x] **eval**
+- [x] **JSON对象**
