@@ -4,6 +4,7 @@
 \- IE9+  
 \- 第二个参数可以为类数组（ES5新增：IE10+）
 ####  fn.bind ( thisObj,agr1,agr2...)
+\- IE9+  
 \- 返回this值绑定为thisObj的新函数，无论该新函数怎么被调用，this始终绑定为thisObj
 
 ### bind's Polyfill

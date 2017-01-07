@@ -284,8 +284,9 @@ git config --global alias.<alias-name> '!<git-command>'
 ### 分支简介
 #### 创建分支
 ```shell
-git branch <branch-name>
+git branch <branch-name> [<base-branch>]
 ```
+基于当前分支（或特定分支）创建新分支
 ```shell
 git log --oneline --decorate
 ```
@@ -304,8 +305,9 @@ git checkout -b <new-branch-name>
 ```shell
 git merge <branch-name>
 ```
-`--no-commit` 选项在默认合并过程中可以用来延迟(即仅合并，需手动提交)
 生成合并提交
+`--no-commit` 选项在默认合并过程中可以用来延迟(即仅合并，需手动提交)
+`--squash` 选项接受被合并的分支上的所有工作，并将其压缩至一个变更集，使仓库变成一个真正的合并发生的状态，而不会真的生成一个合并提交
 #### 删除分支
 ```shell
 git branch -d <branch-name>
@@ -450,4 +452,58 @@ git push -u <remote-name> <local-branch>:<remote-branch>
 ```shell
 git log <branch1>..<branch2>
 ```
-`..`是一种日志过滤器。表示只显示在`<branch2>`但不在`<branch1>`的提交的列表
+`..`是一种日志过滤器。表示只显示在`<branch2>`但不在`<branch1>`的提交的列表，等同于以下命令
+```shell
+git log <branch2> --not <branch1>
+```
+
+### 维护项目
+#### 在特性分支中工作
+#### 应用来自邮件的补丁
+
+##### 使用 apply 命令应用补丁
+应用使用 `git diff` 或 Unix diff命令（不推荐）创建的补丁
+```shell
+git apply path/to/*.patch
+```
+`git apply` 命令采用了一种“全部应用，否则就全部撤销（apply all
+or abort all）”的模型，即补丁只有全部内容都被应用和完全不被应用两个状态(不会创建提交)
+
+```shell
+git apply --check
+```
+在实际应用补丁前,检查补丁是否可以顺利应用
+
+##### 使用 am 命令应用补丁
+应用一个由 `format-patch` 命令生成的补丁
+```shell
+git am path/to/*.patch
+```
+(会创建新提交)
+
+#### 检出远程分支
+#### 确定引入了哪些东西
+```shell
+git log -p
+```
+查看每次提交所引入的具体修改,该命令后会在每次提交
+后面附加对应的差异（diff）
+
+**查看将该特性分支与另一个分支合并的完整 diff**
+
+- 特性分支与直接祖先分支diff（未产生分叉）
+```shell
+git diff <base-branch>
+```
+- 产生了分叉
+```shell
+git merge-base <current-branch> <another-branch>
+```
+或者
+```shell
+git merge-base <another-branch>...<current-branch> 
+```
+对于 `diff` 命令来说，你可以通过
+把 `...` 置于另一个分支名后来对该分支的最新提交与两个分支的共同祖先进行比较
+
+#### 将贡献的工作整合进来

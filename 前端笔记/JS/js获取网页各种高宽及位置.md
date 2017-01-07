@@ -161,6 +161,12 @@ console.log(document.body.scrollHeight)   //540
 #### window.scroll(x,y)
 滚动到document的某一个位置点 , 也可写作`window.scrollTo(x,y)`
 
+#### Document.elementFromPoint(x,y)
+返回当前文档上处于指定坐标位置最顶层的元素（坐标是相对于包含该文档的浏览器窗口的左上角为原点来计算的, 通常 x 和 y 坐标都应为正数）
+
+参考：https://developer.mozilla.org/zh-CN/docs/Web/API/Document/elementFromPoint
+
+
 ## 应用
 #### 获取浏览器可视区域大小：
 参考：http://www.imooc.com/code/1702
@@ -198,3 +204,4 @@ var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documen
 
 **参考**: 
 - http://www.cnblogs.com/jesse131/p/5709285.html
+- http://www.zhangxinxu.com/wordpress/2011/09/cssom%E8%A7%86%E5%9B%BE%E6%A8%A1%E5%BC%8Fcssom-view-module%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86%E4%B8%8E%E4%BB%8B%E7%BB%8D/

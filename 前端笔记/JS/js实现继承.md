@@ -89,7 +89,7 @@ console.log(child.eat("apple"));
 
 ```js
 function createAnother(original){
-  var clone = object(original); //通过调用函数创建一个新对象
+  var clone = createObject(original); //通过调用函数创建一个新对象
   clone.sayHi = function(){ //以某种方式来增强这个对象
   alert("hi");
   };
@@ -139,7 +139,7 @@ if( !Object.create ){
     Object.create=function(proto){
         function F(){};
         F.prototype=proto;
-        return new F;
+        return new F(); // 使用new操作符，如果不传参可省略括号
     }
 }
 */

@@ -119,6 +119,12 @@ $x("//p");  // 匹配所有的p元素
 $x("//p[a]"); // 匹配所有子节点包含a的p元素
 ```
 
+### inspect(el)
+\- 检查DOM中的元素(类似元素审查)
+
+### $_
+\- 重新获取上一次结果的值
+
 ### keys & values
 \- keys(obj) 返回传入对象所有属性名组成的数据  
 \- values(obj) 返回所有属性值组成的数组
@@ -141,6 +147,18 @@ sayHello('tjz');
 unmonitor(sayHello);
 
 ```
+
+### getEventListeners(el)
+\- 查看元素绑定的事件处理函数  
+
+### monitorEvents(el [,event])
+\- 监控元素上发生的事件，并通过`console.log(e.type,e)`打印结果
+- monitorEvents(el)  
+监控元素上所关联的所有事件
+- monitorEvents(el,'click')  
+监控元素上的click事件
+- monitorEvents(el,['click','mouseover'])  
+监控元素上的click和mouseover事件
 
 
 
