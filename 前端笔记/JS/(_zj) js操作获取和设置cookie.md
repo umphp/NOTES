@@ -42,6 +42,14 @@ function getCookie(name) {
     return cookieValue;
 }
 
+// 通过正则获取cookie
+function getCookie(name) {
+    // (^| ) 以后面的字符或空格开始。
+    // ([^;]*) 只匹配除了;号之外的所有字符。
+    // (;|$) 匹配以;号或以前面的字符为结尾的字符。
+    if (name && RegExp("(^| )" + name + "=([^;]*)(;|$)").exec(document.cookie)) return RegExp.$2;
+}
+
 //删除cookie
 function unsetCookie(name) {
     document.cookie = name + "= ; expires=" + new Date(0);

@@ -28,4 +28,5 @@ http://www.cnblogs.com/tugenhua0707/p/5180841.html
 - [x] IE低版本hack (html方式和css方式)
 - [ ] 长连接
 - [ ] 判断鼠标移入容器方向  
-http://www.jb51.net/article/99665.htm
+http://www.jb51.net/article/99665.htm  
+http://www.cnblogs.com/lyzg/p/5689761.html

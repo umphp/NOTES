@@ -53,3 +53,5 @@ native端的热更新，android有Tinker（微信）和Hotfix（阿里）。ios�
 - [ ] **<map>和<area>**
 - [ ] **loadsh、underscore**
 - [ ] **svg**
+- [ ] **移动端touch手势**
+- [ ] **移动端下拉刷新，上拉加载**
