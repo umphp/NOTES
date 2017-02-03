@@ -6,8 +6,8 @@ IE10+, Firefox,Chrome 和 Opera支持transition 属性。
 Safari 通过私有属性 -webkit-transition 支持。  
 
 
-**语法**：
-`transition: property duration timing-function delay;`  
+**语法**：`transition: property duration timing-function delay;`  
+指定多个属性的过渡效果用`,`相隔。
 
 **默认值**：
 `all 0 ease 0；`
@@ -18,17 +18,17 @@ Safari 通过私有属性 -webkit-transition 支持。
 **可选值**：none、all、property（定义应用过渡效果的 CSS 属性名称列表，列表以逗号分隔）
 
 - `transition-duration`   
- transition效果需要指定多少秒或毫秒才能完成（注意带单位s / ms）
+ transition效果需要指定多少秒或毫秒才能完成（注意带单位s 或 ms）
 
 - `transition-timing-function`   
  指定transition效果的转速曲线  
 **可选值**：   
-linear（线性渐变）   
-ease（慢速开始，然后变快，最后慢速结束）  
-ease-in（慢速开始）  
-ease-out（慢速结束）  
-ease-in-out（慢速开始，慢速结束）  
-cubic-bezier(n,n,n,n) （在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间的数值）
+`linear`（线性渐变）   
+`ease`（慢速开始，然后变快，最后慢速结束）  
+`ease-in`（慢速开始）  
+`ease-out`（慢速结束）  
+`ease-in-out`（慢速开始，慢速结束）  
+`cubic-bezier(n,n,n,n)` （在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间的数值）
 
 - `transition-delay`  
 定义过渡效果开始之前需要等待的时间，以秒或毫秒计（注意带单位s / ms）
@@ -127,62 +127,8 @@ none
 }
 ```
 
-## transform
-参考：http://www.w3cplus.com/content/css3-transform  
 
-transform往往与transition和@keyframes配合使用实现动画效果
 
-**兼容性**：  
-IE10+, Firefox,Chrome 和 Opera支持  transform-origin 属性。  
-IE9 支持替代的 -ms-transform-origin 属性（仅适用于 2D 转换）。
-Safari 和 Chrome 支持替代的 -webkit-transform-origin 属性（3D 和 2D 转换）    
-Opera 只支持 2D 转换  
-
-**语法**：
-`transform: none|transform-functions;`  
-
-transform-functions:主要有  **translate（位移）**、**rotate（旋转）**、**scale（缩放）**、**skew（扭曲/歪斜）**、  **matrix（矩阵）**
-
-**默认值**：  
-`none;`
-
-### transform-origin  
-用来设置元素的运动的基点（参照点）。默认点是元素的中心点
-
-**语法**：`transform-origin: x-axisy-axisz-axis;`
-
-**注意**：使用此属性必须先使用 `transform` 属性  
-
-**参数**：
-- `x-axis`  
-定义视图被置于 X 轴的何处  
-**可选值**：left、center、right、length、%
-
-- `y-axis`
-定义视图被置于 Y 轴的何处  
-**可选值**：top、center、bottom、length、%
-
-- `z-axis`  
-定义视图被置于 Z 轴的何处：length
-
-```css
-#div2 {
-    padding:50px;
-    position: absolute;
-    border: 1px solid black;
-    background-color: yellow;
-    -ms-transform: rotate(45deg); /* IE 9 */
-    -ms-transform-origin:20% 40%; /* IE 9 */
-    -webkit-transform: rotate(45deg); /* Safari and Chrome */
-    -webkit-transform-origin:20% 40%; /* Safari and Chrome */
-    -moz-transform: rotate(45deg); /* Firefox */
-    -moz-transform-origin:20% 40%; /* Firefox */
-    -o-transform: rotate(45deg); /* Opera */
-    -o-transform-origin:20% 40%; /* Opera */
-    transform: rotate(45deg);
-    transform-origin:20% 40%;
-}
-```
 
 **参考**：
 - http://www.zhangxinxu.com/wordpress/2010/11/css3-transitions-transforms-animation-introduction/

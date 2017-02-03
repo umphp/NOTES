@@ -6,7 +6,7 @@ var arr = [1,2,3];
 ```
 
 2. **调用构造函数**  
-可以不使用new直接调用Array()
+可以不使用`new`直接调用`Array()`
 
 ```js
 var arr1 = new Array(); // [ ]
@@ -17,12 +17,16 @@ var arr3 = new Arra(1,2,3); // [1,2,3]
 ```
 
 ## Array对象属性
-
+### 静态属性
 属性 | 描述
 ---|---
-constructor	| 返回对创建此对象的数组函数的引用。
+Array.prototype |	使您有能力向对象添加属性和方法。
+
+### 实例属性
+属性 | 描述
+---|---
+constructor	| （继承自Array.prototype.constructor）返回对创建此对象的数组函数的引用。
 length | 设置或返回数组中元素的数目。
-prototype |	使您有能力向对象添加属性和方法。
 
 ## Array对象方法
 ### 静态方法

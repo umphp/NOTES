@@ -9,7 +9,7 @@ content	| some_text | 定义与 http-equiv 或 name 属性相关的元信息
 ### 可选属性
 属性 |	值 |  描述
 ---|---|---
-http-equiv | content-type / expire / refresh / set-cookie	|把content属性关联到HTTP头部
+http-equiv | content-type / X-UA-Compatible / expire / refresh / set-cookie	|把content属性关联到HTTP头部
 name |	author / description / keywords / generator / revised / others |	把 content 属性关联到一个名称
 scheme | some_text | 定义用于翻译 content 属性值的格式
 
@@ -51,17 +51,34 @@ scheme | some_text | 定义用于翻译 content 属性值的格式
 <!-- 字符编码 -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
-<!-- 页面到期时间 -->
-<meta http-equiv="expire" content="Wed,22Jul201511:11:11GMT" />
+<!--告诉IE8+使用最新的引擎渲染网页，chrome=1则可以激活Chrome Frame-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<!-- 页面重刷新，0秒后刷新并跳转 -->
-<meta http-equiv="refresh" content="0;URL=''" />
+<!--语言-->
+<meta http-equiv="content-language" content="zh-CN" />
+
+<!-- 指定网页在缓存中的过期时间 -->
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Expires" content="Wed, 26 Feb 1997 08:21:57 GMT" />
+
+<!--控制页面缓存（不缓存）-->
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<!-- 页面多少秒后刷新或多少秒后跳转到其他网页 -->
+<meta http-equiv="refresh" content="30" />
+<meta http-equiv="refresh" content="0;URL= " />
+
+<!--Window-target (显示窗口的设定) 强制页面在当前窗口以独立页面显示-->
+<meta http-equiv="Widow-target" content="_top" />
+<!--这个属性是用来防止别人在框架里调用你的页面。Content选项：_blank、_top、_self、_parent。-->
 
 <!-- cookie设置 -->
 <meta http-equiv="set-cookie" content="cookie value=xxx;expires=Wed,22-Jul-201511:11:11GMT；path=/" />
 
 <!-- 脚本类型 -->
-<meta http-equiv="Content-Script-Type"Content="text/javascript">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
 
 <!-- 禁止从本地缓存中读取页面 -->
 <meta http-equiv="Pragma"content="no-cache"> 
@@ -111,5 +128,6 @@ scheme | some_text | 定义用于翻译 content 属性值的格式
 <meta name="format-detection" content="telephone=no,email=no,adress=no">
 ```
 
-
+**参考**：
+- http://ziren.org/html-css/html-meta-http-equiv.html
 

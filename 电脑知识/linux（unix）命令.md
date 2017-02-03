@@ -14,6 +14,10 @@ mv <oldName> <newName>
 ```shell
 touch <fileName>
 ```
+或
+```shell
+><fileName>
+```
 #### 查看文件内容
 ```shell
 cat <fileName>
@@ -33,7 +37,7 @@ i
 #### 查看你当前的位置：`pwd`
 
 #### 查看文件夹：`ls`
-默认列出当前目录下fei非隐藏的文件和文件夹  
+默认列出当前目录下非隐藏的文件和文件夹  
 
 查看指定目录下的文件和文件夹，`ls <path>`，可使用想对路径或绝对路径；  
 mac平台查看相信信息，加上`-l`参数；  
@@ -54,6 +58,10 @@ mac可使用快捷键`command + K`
 #### 进入某个目录下：`cd`
 `cd <path>`,可以是想对路径或绝对路径
 
+**技巧**：  
+- 路径可使用`tab`键补齐，如果匹配多个目录则按两次，输出目录可选项
+- `cd`不加路径，直接回到主目录
+
 #### 新建目录：`mkdir`
 `mkdir <directory-name>`
 
@@ -73,7 +81,7 @@ mac：需要加上`-p`参数
 `rm -r <directory> [ <another-directory>... ]`  
 可以加上`-f`参数，这样在删除目录里的文件的时候不会出现提示, Windows Powershell不需要使用参数  
 
-#### 移动目录与文件：`mv`
+#### 移动（或重命名）文件夹或文件：`mv`
 `mv <from-path> <to-path>`  
 如果`<to-path>`不存在，则将`<from-path>`目录重命名为`<to-path>`
 
@@ -88,6 +96,20 @@ mac：需要加上`-p`参数
 `cp -r <path-to-directory> <to-path>`
 
 #### 查看文本文件内容：`cat`
-`cat <file>`
+`cat <fileName>`  
+
+分页查看  
+`less <fileName>`  
+`j`向下滚屏  
+`k`向上滚屏  
+`/`字符查找  
+`g`按两次，跳到文件头  
+`shift-g`跳到文件尾
+
+
+#### 查看文件类型
+```shell
+file <fileName>
+```
 
 

@@ -1,9 +1,9 @@
-# 原生
+# 简易AJAX
 ### 1. 创建XHR对象
 ```js
 var xhr;
 if(window.XMLHttpRequest){
-    xhr=new XMLHttpRwquest(); //IE7+
+    xhr=new XMLHttpRequest(); //IE7+
 }else{
     xhr=new ActiveXObject("Microsoft.XMLHTTP");//IE6
 }
@@ -11,9 +11,13 @@ if(window.XMLHttpRequest){
 ### 2. 发送请求
 ```js
 // method：发送请求方法GET、POST
-// async：请求同步false/异步true
+// async：请求同步false/异步true（默认true）
 xhr.open(method,url,async)
-// 设置请求头信息
+// 设置返回数据类型
+xhr.responseType = "";
+//（XHR2）支持跨域发送cookies（服务端需设置：header("Access-Control-Allow-Credentials: true")）
+xhr.withCredentials = true; 
+// 设置请求头信息（必须在open方法之后）
 xhr.setRequestHeader(key,value)
 // GET请求时可无参数或为null；POST一般要填参数
 xhr.send(string)
@@ -23,9 +27,10 @@ xhr.send(string)
 ```js
 // xhr.responseText :获取字符串形式的响应数据
 // xhr.responseXML :获取XML形式的响应数据
-// xhr.status和xhr.statusText：以数字和文本形式返回HTTP状态码
+// xhr.status 和 xhr.statusText：以数字和文本形式返回HTTP状态码
 // xhr.getAllResponseHeader() :获取所有的响应报头
 // xhr.getResponseHeader() :查询响应中的某个字段的值
+
 ```
 ### 4.监听请求状态
 ```js
@@ -95,19 +100,79 @@ xhr.send('name=郑骥&age=25')
 
 //完整实例 END
 ```
-创建AJAX过程：  
-(1) 创建XMLHttpRequest对象,也就是创建一个异步调用对象      
-(2) 创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息      
-(3) 设置响应HTTP请求状态变化的函数  
-(4) 发送HTTP请求  
-(5) 获取异步调用返回的数据     
-(6) 使用JavaScript和DOM实现局部刷新   
+**创建AJAX过程**：  
+1. 创建XMLHttpRequest对象,也就是创建一个异步调用对象      
+2. 创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息      
+3. 设置响应HTTP请求状态变化的函数  
+4. 发送HTTP请求  
+5. 获取异步调用返回的数据     
+6. 使用JavaScript和DOM实现局部刷新   
+
+### 封装对象
+```js
+/**
+  *  opts : {
+    method: '',
+    url: '',
+    header: '',
+    data: '',
+    success:function(responseText){},
+    fail:function(){}
+  }
+*/
+function ajax(opts){
+    if(!(this instanceof ajax)){
+      return new ajax(opts);
+    }
+    var xhr = new XMLHttpRequest();
+    //绑定请求状态变化事件（可使用'load'和'error'事件替代）
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState === 4){
+        if(xhr.status === 200){
+          opts.success && opts.success(xhr.responseText);
+        }else{
+          opts.fail && opts.fail(xhr.responseText);
+        }
+      }
+    }
+    // 设置返回数据类型
+    if(opts.responseType){
+        xhr.responseType = opts.responseType;
+    }
+    
+    if(opts.method && opts.method.toLowerCase() === "post"){
+      xhr.open("POST",opts.url,true);
+      xhr.setRequestHeader('content-type', opts.header || 'application/x-www-form-urlencoded');
+      xhr.send( this.serialize(opts.data) );
+    }else{
+      xhr.open("GET",opts.url + "?" + this.serialize(opts.data) + new Date().getTime() ,true);
+      if(opts.header){
+          for(var key in opts.header){
+              xhr.setRequestHeader(key,opts.header[key]);
+          }
+      }
+      xhr.send(null);
+    }
+    return xhr;
+}
+ajax.prototype = {
+    constructor:ajax,
+    serialize:function(obj){
+        var result = "";
+        for(var key in obj){
+            result += key + "=" + encodeURI( obj[key] ) + "&";
+        }
+        return result.slice(0,-1);
+    }
+}
+```
 
 **参考**：
 - http://www.imooc.com/video/5913   
 - http://www.runoob.com/ajax/ajax-tutorial.html   
 - https://developer.mozilla.org/zh-CN/docs/AJAX
 - https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest  
+
 # XHR2
 \-  在标准浏览器下，XMLHttpRequest对象已经是升级版本，支持了更多的特性，可以跨域了  
 \-  后端需设置以下头部信息：  
@@ -130,5 +195,10 @@ xhr.onload=function(){
 }
 xhr.send();
 ```
+
+# 进度监测
+
+
 **参考**：
 - https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS
+- https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest

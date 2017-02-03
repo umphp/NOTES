@@ -42,7 +42,7 @@
 - [ ] **node.js**
 - [ ] **混合app：热更新**  
 native端的热更新，android有Tinker（微信）和Hotfix（阿里）。ios有jspatch
-- [ ] **判断鼠标进入容器的方向**
+- [x] **判断鼠标进入容器的方向**
 - [ ] **qq浏览器官网**
 - [ ] **自定义滚动条**
 - [x] **defineProperty**
@@ -55,3 +55,10 @@ native端的热更新，android有Tinker（微信）和Hotfix（阿里）。ios�
 - [ ] **svg**
 - [ ] **移动端touch手势**
 - [ ] **移动端下拉刷新，上拉加载**
+- [ ] **js动画库**
+    - velocity.js和velocity.iu.js
+    http://www.mrfront.com/docs/velocity.js/index.html
+- [ ] **类型转换**
+- [ ] **FileReader**
+- [ ] **setTimeout的第三个参数**  
+https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setTimeout
