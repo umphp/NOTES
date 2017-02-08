@@ -127,8 +127,13 @@ none
 }
 ```
 
+## 相关js事件和方法
+### [transitionend](https://developer.mozilla.org/zh-CN/docs/Web/Events/transitionend)
+（IE10+）在 `CSS transition` 结束后触发`transitionend`事件
 
-
+**注意**：
+- 当transition完成前移除transition时，比如移除css的transition-property 属性，事件将不会被触发
+- 在transition完成前设置 display: none，事件同样不会被触发
 
 **参考**：
 - http://www.zhangxinxu.com/wordpress/2010/11/css3-transitions-transforms-animation-introduction/

@@ -43,6 +43,10 @@ scheme | some_text | 定义用于翻译 content 属性值的格式
 <!-- follow：页面上的链接可以被查询 -->
 <!-- noindex：文件将不被检索，但页面上的链接可以被查询 -->
 <!-- nofollow：文件将被检索，但页面上的链接不可以被查询 -->
+
+<!-- 声明搜索引擎抓取间隔 -->
+<meta name="revisit-after" content="10 days" />
+
 ```
 
 ### http-equiv
@@ -50,6 +54,9 @@ scheme | some_text | 定义用于翻译 content 属性值的格式
 ```html
 <!-- 字符编码 -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- html5写法 -->
+<meta charset="utf-8" />
+
 
 <!--告诉IE8+使用最新的引擎渲染网页，chrome=1则可以激活Chrome Frame-->
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -57,13 +64,15 @@ scheme | some_text | 定义用于翻译 content 属性值的格式
 <!--语言-->
 <meta http-equiv="content-language" content="zh-CN" />
 
-<!-- 指定网页在缓存中的过期时间 -->
+<!-- 指定网页在缓存中的过期时间 （格式必须为GMT格式或0）-->
 <meta http-equiv="Expires" content="0" />
 <meta http-equiv="Expires" content="Wed, 26 Feb 1997 08:21:57 GMT" />
 
 <!--控制页面缓存（不缓存）-->
 <meta http-equiv="Expires" content="0" />
+<!-- HTTP/1.0 -->
 <meta http-equiv="Pragma" content="no-cache" />
+<!-- HTTP/1.0（可选值：public,no-cache,no-store）-->
 <meta http-equiv="Cache-Control" content="no-cache">
 
 <!-- 页面多少秒后刷新或多少秒后跳转到其他网页 -->
@@ -109,19 +118,38 @@ scheme | some_text | 定义用于翻译 content 属性值的格式
 <!-- QQ应用模式 -->
 <meta name="x5-page-mode" content="app">
  
-<!-- IOS启用 WebApp 全屏模式 -->
+ 
+<!-- 声明添加到主屏幕的Web App标题（ios safari;android只能通过title标签声明） -->
+<meta name="apple-mobile-web-app-title" content="Web App名称" />
+
+<!-- 声明添加到主屏幕时隐藏地址栏和状态栏（即全屏）iOS 和 Android5.0+ 上都通用 -->
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<!-- IOS全屏模式下隐藏状态栏/设置状态栏颜色 content的值为default | black | black-translucent  -->
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<!-- IOS添加到主屏后的标题 -->
-<meta name="apple-mobile-web-app-title" content="标题">
+
+<!-- IOS全屏模式下隐藏状态栏/设置状态栏颜色 -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- 有三个固定值可选：
+    default： 白色，网页从状态栏以下开始显示
+    black：黑色，网页从状态栏以下开始显示
+    black-translucent：灰色半透明，网页将充满整个屏幕，状态栏会盖在网页之上
+-->
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
 <!-- IOS添加智能 App 广告条 Smart App Banner -->
 <meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">
  
 <!-- 去除iphone 识别数字为号码 -->
 <meta name="format-detection" content="telephone=no">
+<!-- 拨打电话 -->
+<a href="tel:10086">客服电话</a>
+<!-- 发送短信 -->
+<a href="sms:10086">发送短信</a>
+
 <!-- 不识别邮箱 -->
 <meta name="format-detection" content="email=no">
+<!-- 发送邮件 -->
+<a href="mailto:zhengji@gmail.com">发送邮件</a>
+
+
 <!-- 禁止跳转至地图 -->
 <meta name="format-detection" content="adress=no">
 <!-- 可以连写-->
@@ -130,4 +158,4 @@ scheme | some_text | 定义用于翻译 content 属性值的格式
 
 **参考**：
 - http://ziren.org/html-css/html-meta-http-equiv.html
-
+- http://blog.doyoe.com/2015/10/20/mobile/%E7%A7%BB%E5%8A%A8%E5%89%8D%E7%AB%AF%E7%AC%AC%E4%BA%8C%E5%BC%B9%EF%BC%9A%E5%96%84%E7%94%A8meta/

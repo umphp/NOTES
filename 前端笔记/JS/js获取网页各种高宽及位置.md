@@ -147,6 +147,7 @@ console.log(document.body.scrollHeight)   //540
 返回元素的尺寸（IE8及以下不能获取到宽高）及其相对于视口左上角的位置,如下：
 
 ```
+// width/height是最外围的尺寸，即content + padding + border 
 {
     bottom : 443,
     height : 29,
@@ -168,7 +169,7 @@ console.log(document.body.scrollHeight)   //540
 
 
 ## 应用
-#### 获取浏览器可视区域大小：
+#### 获取浏览器可视区域大小（缩放比例为1）：
 参考：http://www.imooc.com/code/1702
 
 ```js
@@ -188,6 +189,11 @@ h = document.body.clientHeight;
 // 兼容写法
 w = document.documentElement.clientHeight || document.body.clientWidth;
 h = document.documentElement.clientWidth || document.body.clientHeight;
+```
+
+#### 获取页面缩放比例
+```js
+var scale = (document.body.clientWidth || document.documentElement.clientWidth) / window.innerWidth 
 ```
 
 #### 获取页面滚动轴位置
