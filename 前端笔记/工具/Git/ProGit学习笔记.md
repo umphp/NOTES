@@ -8,6 +8,9 @@ git config --global user.email "email@example.com"
 ```
 **--global** 选项表示全局设置，如果要在当前项目设置，则去掉 **--global** ，当前目录设置会覆盖全局设置。
 
+删除相应配置用`--unset`参数  
+查看配置用`-l`参数
+
 ### 文本编辑器
 
 ```shell
@@ -21,6 +24,16 @@ git config --list
 - 检查 Git 的某一项配置
 ```shell
 git config <key>
+```
+### 设置代理（基于ShadowSocks代理）
+**全局**
+```shell
+git config --global http.proxy 'socks5://127.0.0.1:1080'
+git config --global https.proxy 'socks5://127.0.0.1:1080' 
+```
+**github**
+```shell
+git config --global http.https://github.com.proxy 'socks5://127.0.0.1:1080' 
 ```
 
 # 帮助
