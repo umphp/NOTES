@@ -1,7 +1,18 @@
+### 概览
+- **initial 关键字**
+- **text-transform**：控制文本大小写
+- **writing-mode**：书写方向
+- **direction**：文本流方向
+- **unicode-bidi**：配合`direction`使用
+- **table-layout**：用来显示表格单元格、行、列的算法规则
+- **tab-size**：规定制表符（tab）字符的空格长度
+- **backface-visibility**：定义当元素不面向屏幕时是否可见
+- **font-variant**：设置小型大写字母的字体显示文本
+
 ### initial 关键字
 （IE不支持）`initial`属于`CSS-wide`关键字，这表示所有的属性都可以接受该值。如果你想重置某个属性为UA默认设置，那么就可以使用该值
 
-### text-transform
+### [text-transform](http://www.w3school.com.cn/cssref/pr_text_text-transform.asp)
 控制文本的大小写  
 
 **继承性**：yes  
@@ -17,8 +28,6 @@ inherit	| 规定应该从父元素继承 text-transform 属性的值。
 **注意**：
 - 不同的用户代理可能会用不同的方法来确定单词从哪里开始，相应地确定哪些字母要大写。例如，文本 "w3-school" 可以用两种方式显示："W3-school" 和 "W3-School"。CSS 并没有规定哪一种是正确的，所以这两种都是可以的。
 
-**参考**：  
-- http://www.w3school.com.cn/cssref/pr_text_text-transform.asp
 
 ### writing-mode
 设置对象的内容块固有的书写方向
@@ -54,7 +63,7 @@ rtl | 文本流从右到左（需同`unicode-bidi`配合使用）
 **注意**：
 - 当指定一个内联元素的 `unicode-bidi` 属性为normal时， `direction` 属性设置不影响bidi重排序，即其设置不生效
 
-### unicode-bidi
+### [unicode-bidi](http://www.css88.com/book/css/properties/writing-modes/unicode-bidi.htm)
 用于同一个页面里存在从不同方向读进的文本显示。需与`direction`属性一起使用
 
 **继承性**：no  
@@ -68,13 +77,11 @@ isolate (CSS3) |
 isolate-override (CSS3)  | 
 plaintext (CSS3) |
 
-**参考**：
-- http://www.css88.com/book/css/properties/writing-modes/unicode-bidi.htm
 
-### table-layout
+### [table-layout](http://www.w3school.com.cn/cssref/pr_tab_table-layout.asp)
 用来显示表格单元格、行、列的算法规则
 
-**继承性**：yes
+**继承性**：yes  
 **可选值**：
 值 | 描述
 --|--
@@ -82,8 +89,6 @@ auto | **默认值**。列的宽度是由列单元格中没有折行的最宽的
 fixed | 水平布局仅取决于表格宽度、列宽度、表格边框宽度、单元格间距，而与单元格的内容无关。<br>（通过使用固定表格布局，用户代理在接收到第一行后就可以显示表格。
 ）
 
-**参考**：
-- http://www.w3school.com.cn/cssref/pr_tab_table-layout.asp
 
 ### tab-size
 规定制表符（tab）字符的空格长度。（在 HTML 中，制表符（tab）字符通常显示为一个单一的空格字符，除了一些元素，比如 `<textarea>` 和 `<pre>`，tab-size 属性的结果只对这些元素有效）  
@@ -102,7 +107,7 @@ length	| 规定制表符（tab）字符的长度。几乎所有的主流浏览�
 initial	| 设置该属性为它的默认值。
 inherit	| 从父元素继承该属性。
 
-### backface-visibility
+### [backface-visibility](http://www.w3school.com.cn/cssref/pr_backface-visibility.asp)
 （IE10+）定义当元素不面向屏幕时是否可见（例如：绕x轴或y轴旋转180deg）  
 
 **厂商前缀**：   
@@ -114,5 +119,13 @@ inherit	| 从父元素继承该属性。
 visible | **默认**。背面是可见的。
 hidden | 背面是不可见的。
 
-**参考**：
-- http://www.w3school.com.cn/cssref/pr_backface-visibility.asp
+### [font-variant](http://www.w3school.com.cn/cssref/pr_font_font-variant.asp)
+设置小型大写字母的字体显示文本，这意味着所有的小写字母均会被转换为大写，但是所有使用小型大写字体的字母与其余文本相比，其字体尺寸更小
+
+**继承性**：yes  
+**可选值**：
+值 | 描述
+--|--
+normal | 默认值。浏览器会显示一个标准的字体。
+small-caps | 浏览器会显示小型大写字母的字体。
+inherit | 规定应该从父元素继承 `font-variant` 属性的值 (IE9+)

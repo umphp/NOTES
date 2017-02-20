@@ -1,5 +1,5 @@
 ### 本地服务器
-- **anywhere**
+- **[anywhere](https://www.npmjs.com/package/anywhere)**  
 开启本地服务器，监听1234端口
 
 ```shell
@@ -7,9 +7,7 @@ anywhere -p1234
 ```
 
 ### 浏览器刷新
-- **browser-sync**  
-
-http://www.browsersync.cn/docs/command-line/  
+- **[browser-sync](http://www.browsersync.cn/docs/command-line/)**  
 
 **静态网站**
 
